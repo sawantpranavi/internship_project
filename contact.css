@@ -1,0 +1,65 @@
+/* Contact Page Styles */
+#maincontent {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Add rounded corners for better visual appeal */
+    margin: 0 auto; /* Center the content */
+    /* max-width: 800px; Limit width for better readability */
+}
+
+#maincontent h1 {
+    margin-top: 0;
+    color: #007bff; /* Blue color for headings */
+}
+
+#maincontent p {
+    margin: 10px 0;
+    line-height: 1.6; /* Improve readability */
+}
+
+#p1 {
+    font-size: 1.2em;
+}
+
+/* Contact Info Icons */
+#maincontent i {
+    color: #007bff; /* Blue color for icons */
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+/* Back to Home Link */
+#maincontent a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff; /* Blue color for link */
+    font-weight: bold;
+}
+
+#maincontent a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Banner Section */
+/*.mainbanner {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.mainbanner div {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.mainbanner a {
+    text-decoration: none;
+    color: #007bff; /* Blue color for main banner links 
+    font-weight: bold;
+}
+
+.mainbanner a:hover {
+    text-decoration: underline; /* Underline on hover 
+}*/

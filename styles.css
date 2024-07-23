@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: monospace;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: #fff; Removing blue background from the body */
+}
+
+/* .container {
+    width: 80%;
+    margin: auto;
+} */
+
+/* Horizontal Navigation Menu */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox to align items horizontally */
+    background: #22438c;
+}
+
+ul li {
+    position: relative;
+    display: inline-block;
+    /*margin-right: 20px; Spacing between items */
+}
+
+ul li a {
+    text-decoration: none;
+    color: #fff; /* white color for navigation links */
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+}
+
+/* Dropdown Menu */
+ul li ul.dropdown li{
+    display: block ;
+}
+
+ul li ul.dropdown{
+    display: none;
+    position: absolute;
+    background: #22438c;
+    z-index: 999;
+}
+ul li a:hover{
+    background: #112c66;
+}
+
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+.dropdown li a{
+    color: #fff;
+}
+
+/* Additional Styles for Categories, Explore Shop, Services, Contact Us */
+ul li a:hover {
+    color: white;
+    /* color: #0056b3; Darker blue on hover for navigation links */
+}
+
+/* ul .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+ul li:hover .dropdown {
+    display: block;
+}
+
+ul .dropdown li a {
+    padding: 10px 20px;
+    color: #007bff; Blue color for dropdown links 
+}*/
+
+/* Search and Login Button Styles */
+#search {
+    display: flex;
+    align-items: center;
+}
+
+#search input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+}
+
+#search button {
+    padding: 10px 20px;
+    border: none;
+    background: #22438c; /* Blue color for the login button */
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+#search button:hover {
+    background: #002f61; /* Darker blue on hover */
+}
+
+/* Form Box */
+.form-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
+
+.form-value {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.popup-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.popup-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #007bff; /* Blue color for popup buttons */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-buttons button:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Form Content */
+.form-content {
+    display: none; /* Initially hidden */
+}
+
+.form-content form {
+    margin: 0;
+}
+
+.form-content .inputbox {
+    margin-bottom: 15px;
+}
+
+.form-content .inputbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Main Banner */
+#mainbanner {
+    display: flex;
+    justify-content: center;
+    height: 210px;
+    background-color: #6076a3;
+}
+
+.div1{
+    background-color: #22438c;
+    height: 100px;
+    width: 400px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+.div1 h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+/* #mainbanner div {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+} */
+
+.div1 a{
+    text-decoration: none;
+     /*color: #007bff; Blue color for main banner links */
+    color: #fff;
+    font-weight: bold;
+}
+
+#mainbanner a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* main content */
+#maincontent {
+    background-color: #cdd2fa;
+    height: 500px;
+}
+
+/* Footer */
+footer {
+    background: #081530;
+    padding: 20px;
+    height: 10px;
+    text-align: center;
+}
