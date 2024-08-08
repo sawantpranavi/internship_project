@@ -3,18 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iManage | Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>iManage | Contact Us</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <h1>Welcome to iManage</h1>
         <br>
-        <div class="header">
+        <div class="header"> 
             <div id="search">
+                <br>
                 <input type="text" placeholder="Search Products Here">
                 <button id="login-button">Login</button>
-                <div class="form-box" id="login-form">
+                <div class="form-box" id="login-form" style="display: none;">
                     <div class="form-value">
                         <!-- Login and Register buttons -->
                         <div class="popup-buttons">
@@ -23,7 +26,7 @@
                         </div>
 
                         <!-- Login Form -->
-                        <div id="login-content" class="form-content">
+                        <div id="login-content" class="form-content" style="display: none;">
                             <form>
                                 <h2>Login</h2>
                                 <div class="inputbox">
@@ -69,9 +72,9 @@
                                     <label>Mobile Number</label>
                                 </div>
                                 <div class="inputbox">
-                                    <ion-icon name="desig-outline"></ion-icon>
-                                    <input type="text" placeholder="Designation" required >
-                                    
+                                    <ion-icon name="briefcase-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Designation</label>
                                 </div>
                                 <button type="submit">Register</button>
                             </form>
@@ -86,18 +89,18 @@
                 <li>
                     <a href="#">Categories</a>
                     <ul class="dropdown">
-                        <li><a href="categories/computer/comp.html">Computers and Laptops - A</a></li>
-                        <li><a href="categories/printer/printers.html">Printers - B</a></li>
-                        <li><a href="categories/scanner/scanners.html">Scanners - C</a></li>
-                        <li><a href="categories/plotters/plotters.html">Plotters - D</a></li>
-                        <li><a href="categories/ups/ups.html">UPS Online Offline - E</a></li>
-                        <li><a href="categories/xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
-                        <li><a href="categories/mobilitydevices/mobility.html">Mobility Devices - G</a></li>
-                        <li><a href="categories/videodevices/videounits.html">Video Conferencing Devices - H</a></li>
-                        <li><a href="categories/displayunits/displayunits.html">Display Units - I</a></li>
-                        <li><a href="categories/miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
-                        <li><a href="categories/biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
-                        <li><a href="categories/antivirus/antivirus.html">Anti Virus - L</a></li>
+                        <li><a href="../categories/computer/comp.html">Computers and Laptops - A</a></li>
+                        <li><a href="../categories/printer/printers.html">Printers - B</a></li>
+                        <li><a href="../categories/scanner/scanners.html">Scanners - C</a></li>
+                        <li><a href="../categories/plotters/plotters.html">Plotters - D</a></li>
+                        <li><a href="../categories/ups/ups.html">UPS Online Offline - E</a></li>
+                        <li><a href="../categories/xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                        <li><a href="../categories/mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                        <li><a href="../categories/videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                        <li><a href="../categories/displayunits/displayunits.html">Display Units - I</a></li>
+                        <li><a href="../categories/miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                        <li><a href="../categories/biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                        <li><a href="../categories/antivirus/antivirus.html">Anti Virus - L</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Explore Shop</a></li>
@@ -109,34 +112,34 @@
                         <li><a href="#">View Tickets</a></li>
                     </ul>
                 </li>
-                <li><a href="contactus/contact.html">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </div>
-        <br>
-        <section id="maincontent"></section>
-        <br>
-        <section id="mainbanner">
-            <div class="div1">
-                <a href="#"><h2>Ordering Items</h2></a>
-            </div>
-            <br>
-            <div class="div1">
-                <a href="#"><h2>Items AMC</h2></a>
-            </div>
-            <br>
-            <div class="div1">
-                <a href="#"><h2>Support Tickets</h2></a>
-            </div>
+        <section id="maincontent">
+            <h1>CONTACT US</h1>
+            <p id="p1">Feel free to get in touch with us! We value your feedback, questions, and suggestions. Our dedicated team is here to assist you and provide the information you need. Whether you have inquiries about our products or services, need technical support, or just want to say hello, you can reach us through the contact details provided below.</p>
+            <p><i class="fas fa-map-marker-alt"></i> 3rd Floor, IT Hub, Altinho</p>
+            <p><i class="fas fa-phone"></i> (0832)2226024/2224192</p>
+            <p>
+                <i class="fas fa-envelope"></i> helpdesk@gmail.com<br><br>
+                <i class="fas fa-envelope"></i> support@itcgl.in
+            </p>
+            <a href="../index.html">Back to Home</a>
         </section>
-        <br>
+        <!-- <section class="mainbanner">
+            <div id="div1">
+                <a href="#">Ordering Items</a>
+            </div>
+            <div id="div2">
+                <a href="#">Items AMC</a>
+            </div>
+            <div id="div3">
+                <a href="#">Support Tickets</a>
+            </div>
+        </section> -->
     </div>
     <footer>
-        <div id="copyright">
-            <p>© 2024
-                <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
-                - All Rights Reserved.
-            </p>    
-        </div>
+        <section id="footer"></section>
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -150,6 +153,8 @@
             // Show login form popup
             loginButton.addEventListener('click', () => {
                 loginForm.style.display = 'flex';
+                loginContent.style.display = 'block';
+                registerContent.style.display = 'none';
             });
 
             // Close the popup when clicking outside

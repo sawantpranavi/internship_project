@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iManage | Computer and Laptops</title>
+    <link rel="stylesheet" href="../categories.css">
+    <style>
+        #category {
+            text-align: center !important;
+            margin-top: 1.5rem !important;
+            background-color: #eeeeee;
+        }
+        .dash {
+            position: relative;
+            display: inline-block;
+            text-align: center !important;
+            margin-bottom: 2rem;
+            text-transform: uppercase !important;
+        }
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: .5rem; 
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+            margin-top: 15px;
+            margin-bottom: .5rem;
+        } 
+        #span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        #line {
+            /* content: ""; */
+            position: absolute;
+            left: 25%;
+            bottom: -10px;
+            width: 50%;
+            border-bottom: 3px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to iManage</h1>
+        <br>
+        <div class="header">
+            <div id="search">
+                <input type="text" placeholder="Search Products Here">
+                <button id="login-button">Login</button>
+                <div class="form-box" id="login-form">
+                    <div class="form-value">
+                        <!-- Login and Register buttons -->
+                        <div class="popup-buttons">
+                            <button id="login-option">Login</button>
+                            <button id="register-option">Register</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div id="login-content" class="form-content">
+                            <form>
+                                <h2>Login</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" required>
+                                    <label>Password</label>
+                                </div>
+                                <div class="forget">
+                                    <label><input type="checkbox"> Remember Me</label>
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                                <button type="submit">Log In</button>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div id="register-content" class="form-content" style="display: none;">
+                            <form>
+                                <h2>Register</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Username</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                    <input type="tel" required>
+                                    <label>Mobile Number</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="desig-outline"></ion-icon>
+                                    <input type="text" placeholder="Designation" required >
+                                    
+                                </div>
+                                <button type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <ul class="menu">
+                <li>
+                    <a href="#">Categories</a>
+                    <ul class="dropdown">
+                        <li><a href="../computer/comp.html">Computers and Laptops - A</a></li>
+                        <li><a href="../printer/printers.html">Printers - B</a></li>
+                        <li><a href="../scanner/scanners.html">Scanners - C</a></li>
+                        <li><a href="../plotters/plotters.html">Plotters - D</a></li>
+                        <li><a href="../ups/ups.html">UPS Online Offline - E</a></li>
+                        <li><a href="../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                        <li><a href="../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                        <li><a href="../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                        <li><a href="../displayunits/displayunits.html">Display Units - I</a></li>
+                        <li><a href="../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                        <li><a href="../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                        <li><a href="../antivirus/antivirus.html">Anti Virus - L</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Explore Shop</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="#">New Procurement</a></li>
+                        <li><a href="#">AMC Request</a></li>
+                        <li><a href="#">View Tickets</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../contactus/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <br>
+        <div id="content">
+            <div id="category">
+                <h3 class="dash">photocopiers, xerox machines 
+                    <span id="span"> (CATEGORY F)</span>
+                    <div id="line"></div>
+                </h3>
+            </div>
+        </div>
+        <br>
+        <section class="filter-info">
+            <div class="search-box">
+                <label for="product-search">Product Search:</label>
+                <input type="text" id="product-search" name="product-search">
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="xerox.png" alt="photocopiers,xerox machines">
+            </div>
+            <div class="product-info">
+                <h2>Photocopier machine with MFP & Automatic Doc. Feeder – Type 1 (F1)</h2>
+                <ul >
+                    <li>Function: PRINT / SCAN / COPY</li>
+                    <li>Minimum Copying / Printing Speed (CPM): 25cpm or higher</li>
+                    <li>Memory: 1.5GB or higher</li>
+                    <li>ARDF Capacity: 50 Sheets or higher</li>
+                </ul>  
+            </div>
+            <div class="price">
+                <p>INR 163700.22</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="f1/xeroxf1.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="xerox.png" alt="photocopiers, xerox machines">
+            </div>
+            <div class="product-info">
+                <h2>Photocopier machine with MFP & Automatic Doc. Feeder– Type 2 (F2)</h2>
+                <ul >
+                    <li>Function: PRINT / SCAN / COPY</li>
+                    <li>Size: A3</li>
+                    <li>Minimum Copying / Printing Speed (CPM): 20cpm or higher</li>
+                    <li>Memory: 128MB or higher</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 99969.60</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="f2/xeroxf2.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="xerox.png" alt="photocopiers, xerox machines">
+            </div>
+            <div class="product-info">
+                <h2>Heavy Duty Color Inkjet Photocopier machine with MFP & Automatic Doc. Feeder – Type 3 (F3)</h2>
+                <ul >
+                    <li>Function: Digital Multifunctional Office Machine inkjet based PRINT / SCAN / COPY</li>
+                    <li>Size: A-3</li>
+                    <li>Minimum copying/printing speed (cpm): min. 34 ppm</li>
+                    <li>paper size (original / image): A3/A3</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 316153.86</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="f3/xeroxf3.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="xerox.png" alt="photocopiers, xerox machines">
+            </div>
+            <div class="product-info">
+                <h2>Heavy Duty Color Photocopier machine – Type 4 (F4)</h2>
+                <ul >
+                    <li>Print Technology: Laser </li>
+                    <li>Type of Machine: Digital Multifunctional Copier/Multifunction Machine</li>
+                    <li>Type of Printing: Color</li>
+                    <li>Cartridge Technology: Separate Drum And Toner(Dual Component)</li>
+                </ul>
+            </div>           
+            <div class="price">
+                <p>INR 347394.36</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="f4/xeroxf4.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="xerox.png" alt="photocopiers, xerox machines">
+            </div>
+            <div class="product-info">
+                <h2>Digital Duplicator 1 (F5)</h2>
+                <ul >
+                    <li>Master-making/Printing Methods: High-speed digital master-making/fully automatic printing</li>
+                    <li>Original Type: Shee</li>
+                    <li>Original Size (min./max.): 90 mm x 140 mm – 310 mm x 435 mm</li>
+                    <li>Original Paper Weight: 50 gsm – 107 gsm</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 333585.06</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="f5/xeroxf5.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div id="copyright">
+            <p>© 2024
+                <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
+                - All Rights Reserved.
+            </p>    
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginButton = document.getElementById('login-button');
+            const loginForm = document.getElementById('login-form');
+            const loginOption = document.getElementById('login-option');
+            const registerOption = document.getElementById('register-option');
+            const loginContent = document.getElementById('login-content');
+            const registerContent = document.getElementById('register-content');
+
+            // Show login form popup
+            loginButton.addEventListener('click', () => {
+                loginForm.style.display = 'flex';
+            });
+
+            // Close the popup when clicking outside
+            loginForm.addEventListener('click', (event) => {
+                if (event.target === loginForm) {
+                    loginForm.style.display = 'none';
+                }
+            });
+
+            // Show login form content
+            loginOption.addEventListener('click', () => {
+                loginContent.style.display = 'block';
+                registerContent.style.display = 'none';
+            });
+
+            // Show register form content
+            registerOption.addEventListener('click', () => {
+                loginContent.style.display = 'none';
+                registerContent.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

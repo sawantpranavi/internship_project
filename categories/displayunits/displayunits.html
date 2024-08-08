@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iManage | Computer and Laptops</title>
+    <link rel="stylesheet" href="../categories.css">
+    <style>
+        #category {
+            text-align: center !important;
+            margin-top: 1.5rem !important;
+            background-color: #eeeeee;
+        }
+        .dash {
+            position: relative;
+            display: inline-block;
+            text-align: center !important;
+            margin-bottom: 2rem;
+            text-transform: uppercase !important;
+        }   
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: .5rem; 
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+            margin-top: 15px;
+            margin-bottom: .5rem;
+        } 
+        #span {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        #line {
+            /* content: ""; */
+            position: absolute;
+            left: 25%;
+            bottom: -10px;
+            width: 50%;
+            border-bottom: 3px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to iManage</h1>
+        <br>
+        <div class="header">
+            <div id="search">
+                <input type="text" placeholder="Search Products Here">
+                <button id="login-button">Login</button>
+                <div class="form-box" id="login-form">
+                    <div class="form-value">
+                        <!-- Login and Register buttons -->
+                        <div class="popup-buttons">
+                            <button id="login-option">Login</button>
+                            <button id="register-option">Register</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div id="login-content" class="form-content">
+                            <form>
+                                <h2>Login</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" required>
+                                    <label>Password</label>
+                                </div>
+                                <div class="forget">
+                                    <label><input type="checkbox"> Remember Me</label>
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                                <button type="submit">Log In</button>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div id="register-content" class="form-content" style="display: none;">
+                            <form>
+                                <h2>Register</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Username</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                    <input type="tel" required>
+                                    <label>Mobile Number</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="desig-outline"></ion-icon>
+                                    <input type="text" placeholder="Designation" required >
+                                    
+                                </div>
+                                <button type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <ul class="menu">
+                <li>
+                    <a href="#">Categories</a>
+                    <ul class="dropdown">
+                        <li><a href="../computer/comp.html">Computers and Laptops - A</a></li>
+                        <li><a href="../printer/printers.html">Printers - B</a></li>
+                        <li><a href="../scanner/scanners.html">Scanners - C</a></li>
+                        <li><a href="../plotters/plotters.html">Plotters - D</a></li>
+                        <li><a href="../ups/ups.html">UPS Online Offline - E</a></li>
+                        <li><a href="../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                        <li><a href="../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                        <li><a href="../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                        <li><a href="../displayunits/displayunits.html">Display Units - I</a></li>
+                        <li><a href="../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                        <li><a href="../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                        <li><a href="../antivirus/antivirus.html">Anti Virus - L</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Explore Shop</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="#">New Procurement</a></li>
+                        <li><a href="#">AMC Request</a></li>
+                        <li><a href="#">View Tickets</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../contactus/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <br>
+        <div id="content">
+            <div id="category">
+                <h3 class="dash">display units 
+                    <span id="span"> (CATEGORY I)</span>
+                    <div id="line"></div>
+                </h3>
+            </div>
+        </div>
+        <br>
+        <section class="filter-info">
+            <div class="search-box">
+                <label for="product-search">Product Search:</label>
+                <input type="text" id="product-search" name="product-search">
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="#" alt="Display Units">
+            </div>
+            <div class="product-info">
+                <h2>Desktop Computer Intel core i3 (A1)</h2>
+                <ul >
+                    <li>Processor: Intel Core i3 11TH GEN or higher (min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                    <li>Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+                    <li>SSD capacity: 256 GB SSD or higher</li>
+                    <li>Display: 19.5 or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                </ul>
+            </div>            
+            <div class="price">
+                <p>INR 63808.50</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="demo-page.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="#" alt="Display Units">
+            </div>
+            <div class="product-info">
+                <h2>Desktop Computer Intel core i3 (A2)</h2>
+                <ul >
+                    <li>Processor: Intel Core i3 11TH GEN or higher (min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                    <li>Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+                    <li>SSD capacity: 256 GB SSD or higher</li>
+                    <li>Display: 19.5 or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 63808.50</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="demo-page.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="#" alt="Display Units">
+            </div>
+            <div class="product-info">
+                <h2>Desktop Computer Intel core i3 (A3)</h2>
+                <ul >
+                    <li>Processor: Intel Core i3 11TH GEN or higher (min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                    <li>Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+                    <li>SSD capacity: 256 GB SSD or higher</li>
+                    <li>Display: 19.5 or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 63808.50</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="demo-page.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="#" alt="Display Units">
+            </div>
+            <div class="product-info">
+                <h2>Desktop Computer Intel core i3 (A4)</h2>
+                <ul >
+                    <li>Processor: Intel Core i3 11TH GEN or higher (min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                    <li>Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+                    <li>SSD capacity: 256 GB SSD or higher</li>
+                    <li>Display: 19.5 or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 63808.50</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="demo-page.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+        <section class="product">
+            <div class="product-image">
+                <img src="#" alt="Display Units">
+            </div>
+            <div class="product-info">
+                <h2>Desktop Computer Intel core i3 (A5)</h2>
+                <ul >
+                    <li>Processor: Intel Core i3 11TH GEN or higher (min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                    <li>Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+                    <li>SSD capacity: 256 GB SSD or higher</li>
+                    <li>Display: 19.5 or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                </ul>
+            </div>
+            <div class="price">
+                <p>INR 63808.50</p>
+                <span>Per Unit</span>
+                <br>
+                <br>
+                <a href="demo-page.html" class="view-models-btn">View Models</a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div id="copyright">
+            <p>© 2024
+                <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
+                - All Rights Reserved.
+            </p>    
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginButton = document.getElementById('login-button');
+            const loginForm = document.getElementById('login-form');
+            const loginOption = document.getElementById('login-option');
+            const registerOption = document.getElementById('register-option');
+            const loginContent = document.getElementById('login-content');
+            const registerContent = document.getElementById('register-content');
+
+            // Show login form popup
+            loginButton.addEventListener('click', () => {
+                loginForm.style.display = 'flex';
+            });
+
+            // Close the popup when clicking outside
+            loginForm.addEventListener('click', (event) => {
+                if (event.target === loginForm) {
+                    loginForm.style.display = 'none';
+                }
+            });
+
+            // Show login form content
+            loginOption.addEventListener('click', () => {
+                loginContent.style.display = 'block';
+                registerContent.style.display = 'none';
+            });
+
+            // Show register form content
+            registerOption.addEventListener('click', () => {
+                loginContent.style.display = 'none';
+                registerContent.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

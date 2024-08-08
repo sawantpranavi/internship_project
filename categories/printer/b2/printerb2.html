@@ -3,8 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iManage | Home</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>iManage | Computer and Laptops</title>
+    <link rel="stylesheet" href="../../categories.css">
+    <style>
+        #category {
+            text-align: center !important;
+            margin-top: 1.5rem !important;
+            background-color: #eeeeee;
+        }
+        /* .dash {
+            position: relative;
+            display: inline-block;
+            text-align: center !important;
+            margin-bottom: 2rem;
+            text-transform: uppercase !important;
+        } */
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: .5rem; 
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+            margin-top: 15px;
+            margin-bottom: .5rem;
+        } 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-box {
+            background-color: #ffffff;
+            margin: 1rem;/*10 20px */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(25% -10px); /*Adjust this width as needed*/
+            height: 280px;
+        }
+        .product-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .product-box img {
+            max-width: 180px;
+            /* margin-bottom: 2px; */
+        }
+        .product-box h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .product-box p {
+            /* margin: 5px 0; */
+            color: #777;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -86,18 +150,18 @@
                 <li>
                     <a href="#">Categories</a>
                     <ul class="dropdown">
-                        <li><a href="categories/computer/comp.html">Computers and Laptops - A</a></li>
-                        <li><a href="categories/printer/printers.html">Printers - B</a></li>
-                        <li><a href="categories/scanner/scanners.html">Scanners - C</a></li>
-                        <li><a href="categories/plotters/plotters.html">Plotters - D</a></li>
-                        <li><a href="categories/ups/ups.html">UPS Online Offline - E</a></li>
-                        <li><a href="categories/xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
-                        <li><a href="categories/mobilitydevices/mobility.html">Mobility Devices - G</a></li>
-                        <li><a href="categories/videodevices/videounits.html">Video Conferencing Devices - H</a></li>
-                        <li><a href="categories/displayunits/displayunits.html">Display Units - I</a></li>
-                        <li><a href="categories/miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
-                        <li><a href="categories/biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
-                        <li><a href="categories/antivirus/antivirus.html">Anti Virus - L</a></li>
+                        <li><a href="../../computer/comp.html">Computers and Laptops - A</a></li>
+                        <li><a href="../../printer/printers.html">Printers - B</a></li>
+                        <li><a href="../../scanner/scanners.html">Scanners - C</a></li>
+                        <li><a href="../../plotters/plotters.html">Plotters - D</a></li>
+                        <li><a href="../../ups/ups.html">UPS Online Offline - E</a></li>
+                        <li><a href="../../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                        <li><a href="../../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                        <li><a href="../../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                        <li><a href="../../displayunits/displayunits.html">Display Units - I</a></li>
+                        <li><a href="../../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                        <li><a href="../../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                        <li><a href="../../antivirus/antivirus.html">Anti Virus - L</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Explore Shop</a></li>
@@ -109,26 +173,49 @@
                         <li><a href="#">View Tickets</a></li>
                     </ul>
                 </li>
-                <li><a href="contactus/contact.html">Contact Us</a></li>
+                <li><a href="../../../contactus/contact.html">Contact Us</a></li>
             </ul>
         </div>
         <br>
-        <section id="maincontent"></section>
-        <br>
-        <section id="mainbanner">
-            <div class="div1">
-                <a href="#"><h2>Ordering Items</h2></a>
+        <div id="content">
+            <div id="category">
+                <h3 class="dash">B2 - Laser Printer Network (Mono)</h3>
             </div>
-            <br>
-            <div class="div1">
-                <a href="#"><h2>Items AMC</h2></a>
+        </div>
+        <section class="product-list">
+            <div class="product-box">
+                <a href="1.html">
+                    <h3>Laser Printer Network (Mono)</h3>
+                    <img src="../printers.png" alt="Printers">
+                    <p>Brother HL 2361DN</p>
+                    <p>INR 19300.38</p>
+                </a>
             </div>
-            <br>
-            <div class="div1">
-                <a href="#"><h2>Support Tickets</h2></a>
+            <div class="product-box">
+                <a href="2.html">
+                    <h3>Laser Printer Network (Mono)</h3>
+                    <img src="../printers.png" alt="Printers">                    
+                    <p>Canon LBP 161DN</p>
+                    <p>INR 19300.38</p>
+                </a>
+            </div>
+            <div class="product-box">
+                <a href="3.html">
+                    <h3>Laser Printer Network (Mono)</h3>
+                    <img src="../printers.png" alt="Printers">
+                    <p>HP LJ Pro M202DW</p>
+                    <p>INR 19300.38</p>
+                </a>
+            </div>
+            <div class="product-box">
+                <a href="4.html">
+                    <h3>Laser Printer Network (Mono)</h3>
+                    <img src="../printers.png" alt="Printers">
+                    <p>Xerox MakePhaser 3025</p>
+                    <p>INR 19300.38</p>
+                </a>
             </div>
         </section>
-        <br>
     </div>
     <footer>
         <div id="copyright">

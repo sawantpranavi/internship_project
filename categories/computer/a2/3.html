@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iManage | Computer and Laptops</title>
+    <link rel="stylesheet" href="../../categories.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        nav {
+            background-color: #ffffff;
+            padding: 20px 20px;
+            /* border-bottom: 1px solid #e0e0e0; */
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 5px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .product-detail {
+            display: flex;
+            align-items: center;
+            /* justify-content: center; */
+            /* padding: 50px; */
+            background-color: #ffffff;
+            /* margin: 20px auto; */
+            /* max-width: 800px; */
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+        }
+        .product-image img {
+            max-width: 400px;
+            margin-right: 100px;
+            margin-left: 100px;
+        }
+        .product-info {
+            max-width: 500px;
+        }
+        .product-info h2 {
+            font-size: 30px;
+            margin: 0;
+        }
+        .product-info p {
+            font-size: 20px;
+            color: #777;
+        }
+        .product-options {
+            margin: 20px 0;
+
+        }
+        .product-options label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .product-options select,
+        .product-options input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button#add-to-cart {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 50px;
+            width: 100%;
+        }
+        button#add-to-cart:hover {
+            background-color: #555;
+        }
+
+        /* description */
+       .product-specifications {
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 20px;
+            /* max-width: 800px; */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .specifications-header {
+            background-color: #22438c;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .specifications-body {
+            padding: 30px;
+        }
+        .specifications-body h3 {
+            color: #333;
+        }
+        .specs-list {
+            display: flex;
+            justify-content: space-between;
+        }
+        .specs-list ul {
+            list-style-type: none;
+            /* padding: 0; */
+            /* margin: 0; */
+        }
+        .specs-list li {
+            margin-bottom: 10px;
+            color: #777;
+        }
+    </style> 
+</head>
+    <body>
+        <div class="container">
+            <h1>Welcome to iManage</h1>
+            <br>
+            <div class="header">
+                <div id="search">
+                    <input type="text" placeholder="Search Products Here">
+                    <button id="login-button">Login</button>
+                    <div class="form-box" id="login-form">
+                        <div class="form-value">
+                            <!-- Login and Register buttons -->
+                            <div class="popup-buttons">
+                                <button id="login-option">Login</button>
+                                <button id="register-option">Register</button>
+                            </div>
+
+                            <!-- Login Form -->
+                            <div id="login-content" class="form-content">
+                                <form>
+                                    <h2>Login</h2>
+                                    <div class="inputbox">
+                                        <ion-icon name="mail-outline"></ion-icon>
+                                        <input type="email" required>
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <ion-icon name="lock-closed-outline"></ion-icon>
+                                        <input type="password" required>
+                                        <label>Password</label>
+                                    </div>
+                                    <div class="forget">
+                                        <label><input type="checkbox"> Remember Me</label>
+                                        <a href="#">Forgot Password</a>
+                                    </div>
+                                    <button type="submit">Log In</button>
+                                </form>
+                            </div>
+
+                            <!-- Register Form -->
+                            <div id="register-content" class="form-content" style="display: none;">
+                                <form>
+                                    <h2>Register</h2>
+                                    <div class="inputbox">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                        <input type="text" required>
+                                        <label>Full Name</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                        <input type="text" required>
+                                        <label>Username</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <ion-icon name="mail-outline"></ion-icon>
+                                        <input type="email" required>
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <ion-icon name="call-outline"></ion-icon>
+                                        <input type="tel" required>
+                                        <label>Mobile Number</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <ion-icon name="desig-outline"></ion-icon>
+                                        <input type="text" placeholder="Designation" required >
+                                        
+                                    </div>
+                                    <button type="submit">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div>
+                <ul class="menu">
+                    <li>
+                        <a href="#">Categories</a>
+                        <ul class="dropdown">
+                            <li><a href="../../computer/comp.html">Computers and Laptops - A</a></li>
+                            <li><a href="../../printer/printers.html">Printers - B</a></li>
+                            <li><a href="../../scanner/scanners.html">Scanners - C</a></li>
+                            <li><a href="../../plotters/plotters.html">Plotters - D</a></li>
+                            <li><a href="../../ups/ups.html">UPS Online Offline - E</a></li>
+                            <li><a href="../../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                            <li><a href="../../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                            <li><a href="../../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                            <li><a href="../../displayunits/displayunits.html">Display Units - I</a></li>
+                            <li><a href="../../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                            <li><a href="../../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                            <li><a href="../../antivirus/antivirus.html">Anti Virus - L</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Explore Shop</a></li>
+                    <li>
+                        <a href="#">Services</a>
+                        <ul class="dropdown">
+                            <li><a href="#">New Procurement</a></li>
+                            <li><a href="#">AMC Request</a></li>
+                            <li><a href="#">View Tickets</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../../contactus/contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <nav>
+                <a href="../comp.html">Computers and Laptops</a> &gt; 
+                <a href="../a2/compa2.html">Desktop Computer Intel core i5 (Category A2)</a> &gt; 
+                <a href="#">Vostro 3020</a>
+            </nav>
+            <section class="product-detail">
+                <div class="product-image">
+                    <img src="../computer.png" alt="Desktop Computer">
+                </div>
+                <div class="product-info">
+                    <h2>Dell</h2>
+                    <h2>Vostro 3020</h2>
+                    <br>
+                    <p>INR 74587.80</p>
+                    <div class="product-options">
+                        <label for="vendor">Select Vendor</label>
+                        <select id="vendor">
+                            <option value="M/s Nupur Technologies Pvt. Ltd.">M/s Nupur Technologies Pvt. Ltd.</option>
+                            <option value="M/s Perfect Systems & Services">M/s Perfect Systems & Services</option>
+                        </select>
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                    </div>
+                    <button id="add-to-cart">ADD TO CART</button>
+                </div>
+            </section>
+            <section class="product-specifications">
+                <div class="specifications-header">
+                    <h2>DESCRIPTION</h2>
+                </div>
+                <div class="specifications-body">
+                    <h3>PRODUCT SPECIFICATIONS</h3>
+                    <div class="specs-list">
+                        <ul>
+                            <li>- Processor: Intel Core i5 11TH GEN or higher(min 8M Cache, 2.0GHz up to 4.00GHz)</li>
+                            <li>- SSD capacity: 256 GB SSD or higher</li>
+                            <li>- Keyboard: 104 keys or higher, OEM Keyboard</li>
+                            <li>- Mouse: Optical Scroll with USB interface</li>
+                            <li>- Optical Drive: 8X or higher DVD-R/W</li>
+                            <li>- Preloaded Softwares: Windows 11 Professional preloaded or higher, Antivirus with 3 Years Subscription</li>
+                            <li>- OS Certification: Windows/ Linux Certifications</li>
+                            <li>- Warranty: 3 Years Comprehensive onsite warranty (Covering all parts including OS)</li>
+                        </ul>
+                        <ul>
+                            <li>- Memory: 16 GB, DDR4 RAM with 32 GB Expandability</li>
+                            <li>- Display: 19.5" or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
+                            <li>- Ports: 6 USB Ports including 2 USB 3.0 Ports (with at least 2 in front), audio ports for microphone and headphone in front</li>
+                            <li>- Networking Features: 10/100/1000 Mbps on board Integrated Network Port & Integrated wireless b/g/n</li>
+                            <li>- Recovery: Image of the OS should be available on SSD, additionally the same should be made available on USB / CD</li>
+                            <li>- Patch Cord: CAT6 Patch Cord of 3 Meters length (Factory crimped only)</li>
+                            <li>- Open Office Suite: Preinstall Open Office suite</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <div id="copyright">
+                    <p>© 2024
+                        <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
+                        - All Rights Reserved.
+                    </p>    
+                </div>
+            </footer>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const loginButton = document.getElementById('login-button');
+                    const loginForm = document.getElementById('login-form');
+                    const loginOption = document.getElementById('login-option');
+                    const registerOption = document.getElementById('register-option');
+                    const loginContent = document.getElementById('login-content');
+                    const registerContent = document.getElementById('register-content');
+
+                    // Show login form popup
+                    loginButton.addEventListener('click', () => {
+                        loginForm.style.display = 'flex';
+                    });
+
+                    // Close the popup when clicking outside
+                    loginForm.addEventListener('click', (event) => {
+                        if (event.target === loginForm) {
+                            loginForm.style.display = 'none';
+                        }
+                    });
+
+                    // Show login form content
+                    loginOption.addEventListener('click', () => {
+                        loginContent.style.display = 'block';
+                        registerContent.style.display = 'none';
+                    });
+
+                    // Show register form content
+                    registerOption.addEventListener('click', () => {
+                        loginContent.style.display = 'none';
+                        registerContent.style.display = 'block';
+                    });
+
+                    document.getElementById('add-to-cart').addEventListener('click', function() {
+                        alert('Item added to cart!');
+                    });
+                });
+            </script>
+        </div>
+    </body>
+</html>
