@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iManage | Computer and Laptops</title>
+    <link rel="stylesheet" href="../../categories.css">
+    <style>
+        #category {
+            text-align: center !important;
+            margin-top: 1.5rem !important;
+            background-color: #eeeeee;
+        }
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: .5rem; 
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.2;
+            color: inherit;
+            margin-top: 15px;
+            margin-bottom: .5rem;
+        } 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-box {
+            background-color: #ffffff;
+            margin: 1rem;/*10 20px */
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(25% -10px); /*Adjust this width as needed*/
+            height: 280px;
+        }
+        .product-box a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .product-box img {
+            max-width: 180px;
+            /* margin-bottom: 2px; */
+        }
+        .product-box h3 {
+            font-size: 16px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .product-box p {
+            /* margin: 5px 0; */
+            color: #777;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to iManage</h1>
+        <br>
+        <div class="header">
+            <div id="search">
+                <input type="text" placeholder="Search Products Here">
+                <button id="login-button">Login</button>
+                <div class="form-box" id="login-form">
+                    <div class="form-value">
+                        <!-- Login and Register buttons -->
+                        <div class="popup-buttons">
+                            <button id="login-option">Login</button>
+                            <button id="register-option">Register</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <div id="login-content" class="form-content">
+                            <form>
+                                <h2>Login</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="lock-closed-outline"></ion-icon>
+                                    <input type="password" required>
+                                    <label>Password</label>
+                                </div>
+                                <div class="forget">
+                                    <label><input type="checkbox"> Remember Me</label>
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                                <button type="submit">Log In</button>
+                            </form>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div id="register-content" class="form-content" style="display: none;">
+                            <form>
+                                <h2>Register</h2>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Full Name</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <input type="text" required>
+                                    <label>Username</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="mail-outline"></ion-icon>
+                                    <input type="email" required>
+                                    <label>Email</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="call-outline"></ion-icon>
+                                    <input type="tel" required>
+                                    <label>Mobile Number</label>
+                                </div>
+                                <div class="inputbox">
+                                    <ion-icon name="desig-outline"></ion-icon>
+                                    <input type="text" placeholder="Designation" required >
+                                    
+                                </div>
+                                <button type="submit">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div>
+            <ul class="menu">
+                <li>
+                    <a href="#">Categories</a>
+                    <ul class="dropdown">
+                        <li><a href="../../computer/comp.html">Computers and Laptops - A</a></li>
+                        <li><a href="../../printer/printers.html">Printers - B</a></li>
+                        <li><a href="../../scanner/scanners.html">Scanners - C</a></li>
+                        <li><a href="../../plotters/plotters.html">Plotters - D</a></li>
+                        <li><a href="../../ups/ups.html">UPS Online Offline - E</a></li>
+                        <li><a href="../../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
+                        <li><a href="../../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
+                        <li><a href="../../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
+                        <li><a href="../../displayunits/displayunits.html">Display Units - I</a></li>
+                        <li><a href="../../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
+                        <li><a href="../../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
+                        <li><a href="../../antivirus/antivirus.html">Anti Virus - L</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Explore Shop</a></li>
+                <li>
+                    <a href="#">Services</a>
+                    <ul class="dropdown">
+                        <li><a href="#">New Procurement</a></li>
+                        <li><a href="#">AMC Request</a></li>
+                        <li><a href="#">View Tickets</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../../contactus/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <br>
+        <div id="content">
+            <div id="category">
+                <h3 class="dash">G4 - Tablet cum Laptop with 8GB RAM</h3>
+            </div>
+        </div>
+        <section class="product-list">
+            <div class="product-box">
+                <a href="1.html">
+                    <h3>Tablet cum Laptop with 8GB RAM</h3>
+                    <img src="../mobility.png" alt="mobility Devices">
+                    <p>Samsung Tab S7+ LTE T975N</p>
+                    <p>INR 197439.96</p>
+                </a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <div id="copyright">
+            <p>© 2024
+                <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
+                - All Rights Reserved.
+            </p>    
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginButton = document.getElementById('login-button');
+            const loginForm = document.getElementById('login-form');
+            const loginOption = document.getElementById('login-option');
+            const registerOption = document.getElementById('register-option');
+            const loginContent = document.getElementById('login-content');
+            const registerContent = document.getElementById('register-content');
+
+            // Show login form popup
+            loginButton.addEventListener('click', () => {
+                loginForm.style.display = 'flex';
+            });
+
+            // Close the popup when clicking outside
+            loginForm.addEventListener('click', (event) => {
+                if (event.target === loginForm) {
+                    loginForm.style.display = 'none';
+                }
+            });
+
+            // Show login form content
+            loginOption.addEventListener('click', () => {
+                loginContent.style.display = 'block';
+                registerContent.style.display = 'none';
+            });
+
+            // Show register form content
+            registerOption.addEventListener('click', () => {
+                loginContent.style.display = 'none';
+                registerContent.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
