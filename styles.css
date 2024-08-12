@@ -163,6 +163,7 @@ ul .dropdown li a {
 /* Form Content */
 .form-content {
     display: none; /* Initially hidden */
+    width: 500px;
 }
 
 .form-content form {
@@ -178,6 +179,7 @@ ul .dropdown li a {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 /* Main Banner */
@@ -222,8 +224,11 @@ ul .dropdown li a {
 
 /* main content */
 #maincontent {
-    background-color: #cdd2fa;
-    height: 500px;
+    background-color: #123f62;
+    height: 450px;
+    text-align: center;
+    padding-top: 20px;
+   position: relative;
 }
 
 /* Footer */
@@ -242,4 +247,44 @@ footer #copyright p{
 footer #copyright{
     padding-top: 10px;
     text-align: center;
+}
+
+
+
+
+#explore{
+    color:#03090b;
+    background-color: #72afefc5;
+    font-size: 30px;
+}
+
+#c{
+    background-color: #f8f9fb;
+    text-align: left;
+}
+
+.container img
+{
+    width:100%;
+}
+
+.container .text{
+    position:absolute;
+    color:white;
+    left:50%;
+    top:20%;
+    font-size: 50px;
+    transform: translate(-50%,-50%);
+
+}
+
+
+.container .text1{
+    position:absolute;
+    color:white;
+    left:33%;
+    top:68%;
+    font-size:37px;
+    transform: translate(-50%,-50%);
+
 }
