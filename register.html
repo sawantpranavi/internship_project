@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iManage | Home</title>
-    <link rel="stylesheet" href="../trial.css">
+    <link rel="stylesheet" href="trial.css">
 </head>
 <body>
     <div class="container">
@@ -121,6 +121,10 @@
                                     </select>
                                 </div>
                                 <div class="inputbox">
+                                    <input type="password" placeholder="Password">
+                                    <!-- <label>Password</label> -->
+                                </div>
+                                <!-- <div class="inputbox">
                                     <select id="dropdown">
                                         <option value="select division">Select Division</option>
                                     </select>
@@ -198,7 +202,7 @@
                                             <option value="dhar">dharbandora</option>
                                             <option value="sank">Sankhalim</option>
                                     </select>
-                                </div>
+                                </div> -->
                                 <button type="submit">Register</button>
                             </form>
                         </div>
@@ -216,14 +220,48 @@
             </p>    
         </div>
     </footer>
-     <!-- <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const loginButton = document.getElementById('login-button');
-            const loginForm = document.getElementById('login-form');
-            const loginOption = document.getElementById('login-option');
-            const registerOption = document.getElementById('register-option');
-            const loginContent = document.getElementById('login-content');
-            const registerContent = document.getElementById('register-content');
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                userName: document.getElementById('userName').value,
+                email: document.getElementById('email').value,
+                address: document.getElementById('address').value,
+                password: document.getElementById('password').value,
+                designation: document.getElementById('designation').value,
+                department: document.getElementById('department').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/api/imanage/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+                alert(result.message);
+            } catch (error) {
+                console.error('Error:', error);
+                alert('There was a problem with the registration.');
+            }
+        });
+    
+
+
+
+
+        // <--document.addEventListener('DOMContentLoaded', () => {
+        //     const loginButton = document.getElementById('login-button');
+        //     const loginForm = document.getElementById('login-form');
+        //     const loginOption = document.getElementById('login-option');
+        //     const registerOption = document.getElementById('register-option');
+        //     const loginContent = document.getElementById('login-content');
+        //     const registerContent = document.getElementById('register-content');
 
             // Show login form popup
             // loginButton.addEventListener('click', () => {
@@ -238,19 +276,19 @@
             // });
 
             // Show login form content
-            loginOption.addEventListener('click', () => {
-                // loginContent.style.display = 'block';
-                // registerContent.style.display = 'none';
-                location.href = "./authentication/login.html";
-            });
+            // loginOption.addEventListener('click', () => {
+            //     // loginContent.style.display = 'block';
+            //     // registerContent.style.display = 'none';
+            //     location.href = "./authentication/login.html";
+            // });
 
-            // Show register form content
-            registerOption.addEventListener('click', () => {
-                // loginContent.style.display = 'none';
-                // registerContent.style.display = 'block';
-                location.href = "./authentication/register.html";
-            });
-        });
-    </script> -->
+            // // Show register form content
+            // registerOption.addEventListener('click', () => {
+            //     // loginContent.style.display = 'none';
+            //     // registerContent.style.display = 'block';
+            //     location.href = "./authentication/register.html";
+            // });
+        // });-
+    </script> 
 </body>
 </html>
