@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Header Section */
+.header {
+    margin: 20px 0;
+}
+
+/* Form Box Styling */
+.form-box {
+    background: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.inputbox {
+    margin-bottom: 15px;
+}
+
+.inputbox input,
+.inputbox select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.inputbox select {
+    height: 40px;
+}
+
+/* button {
+    width: 100%;
+    padding: 10px;
+    background-color: #5cb85c;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+} */
+
+#search button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #22438c;
+    color: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* margin-left: 10px; */
+}
+
+/* button:hover {
+    background-color: #4cae4c;
+} */
+
+/* Footer Styling */
+/* footer {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}*/
+
+/* #copyright a {
+    color: #fff;
+    text-decoration: none;
+} */
+
+/* #copyright a:hover {
+    text-decoration: underline;
+} */
+
+footer{
+    background: #081530;
+    padding: 10px 0;
+    /* height: 35px; */
+    text-align: center;
+}
+
+footer #copyright p{
+    color: #fff;
+    color: #757575;
+}
+
+footer #copyright{
+    padding-top: 10px;
+    text-align: center;
+}

@@ -95,13 +95,13 @@ ul .dropdown li a {
     display: flex;
     align-items: center;
 }
-
+/* 
 #search input[type="text"] {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
     flex: 1;
-}
+} */
 
 #search button {
     padding: 10px 20px;
@@ -158,6 +158,17 @@ ul .dropdown li a {
 
 .popup-buttons button:hover {
     background: #0056b3; /* Darker blue on hover */
+}
+
+#login-option a{
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #007bff; /* Blue color for popup buttons */
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 /* Form Content */

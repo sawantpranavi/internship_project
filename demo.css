@@ -1,56 +1,16 @@
-Horizontal Navigation Menu
-ul {
-    list-style-type: none;
-    padding: 0;
+* {
     margin: 0;
-    display: flex; /* Use flexbox to align items horizontally */
-    background: #22438c;
+    padding: 0;
+    font-size: monospace;
 }
 
-ul li {
-    position: relative;
-    display: inline-block;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background: #fff; Removing blue background from the body */
 }
-
-ul li a {
-    text-decoration: none;
-    color: #fff; /* white color for navigation links */
-    padding: 10px;
-    display: block;
-    text-align: center;
-    font-size: 20px;
-}
-
-/* Dropdown Menu */
-ul li ul.dropdown li {
-    display: block;
-}
-
-ul li ul.dropdown {
-    display: none;
-    position: absolute;
-    background: #22438c;
-    z-index: 999;
-}
-
-ul li a:hover {
-    background: #112c66;
-}
-
-ul li:hover ul.dropdown {
-    display: block;
-}
-
-.dropdown li a {
-    color: #fff;
-}
-
-/* Additional Styles for Categories, Explore Shop, Services, Contact Us */
-ul li a:hover {
-    color: white;
-    /* color: #0056b3; Darker blue on hover for navigation links */
-}
-
 /* Search and Login Button Styles */
 #search {
     display: flex;
@@ -131,6 +91,11 @@ ul li a:hover {
 .form-content form {
     margin: 0;
 }
+
+.form-content .inputbox {
+    margin-bottom: 15px;
+}
+
 .inputbox1 {
     font-size: 20px;
 }
@@ -139,7 +104,56 @@ ul li a:hover {
     font-size: 17px;
 }
 
+.form-content .inputbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
 
+/* Main Banner */
+#mainbanner {
+    display: flex;
+    justify-content: center;
+    height: 130px;
+    background-color: #6076a3;
+}
+
+.div1 {
+    background-color: #3866c2;
+    height: 100px;
+    width: 400px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+.div1 h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.div1 a {
+    text-decoration: none;
+    /*color: #007bff; Blue color for main banner links */
+    color: #fff;
+    font-weight: bold;
+}
+
+#mainbanner a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main Content */
+#maincontent {
+    background-color: #123f62;
+    height: 450px;
+    text-align: center;
+    padding-top: 20px;
+   position: relative;
+}
 
 h2 {
     background-color: #3866c2;
@@ -149,4 +163,48 @@ h2 {
 .cat {
     font-size: 15px;
     color: rgb(3, 65, 68);
+}
+
+/* Footer */
+footer {
+    background: #081530;
+    padding: 20px;
+    height: 10px;
+    text-align: center;
+}
+#explore{
+    color:#03090b;
+    background-color: #72afefc5;
+    font-size: 30px;
+}
+
+#c{
+    background-color: #f8f9fb;
+    text-align: left;
+}
+
+.container img
+{
+    width:100%;
+}
+
+.container .text{
+    position:absolute;
+    color:white;
+    left:50%;
+    top:20%;
+    font-size: 50px;
+    transform: translate(-50%,-50%);
+
+}
+
+
+.container .text1{
+    position:absolute;
+    color:white;
+    left:33%;
+    top:68%;
+    font-size:37px;
+    transform: translate(-50%,-50%);
+
 }
