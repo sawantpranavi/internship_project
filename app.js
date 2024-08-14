@@ -2,20 +2,76 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
+const mysql = require('mysql2');
+
+// Create a MySQL connection pool
+const pool = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: 3306 // Default port for MySQL
+});
+
+// Promisify the pool query method for use with async/await
+const promisePool = pool.promise();
 
 const app = express();
 
 // Middleware
+const cors = require('cors');
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 
 // Routes
 app.use('/api/imanage', authRoutes);
+
+// Test database connection
+app.get('/test-db', async (req, res) => {
+    try {
+        const [rows] = await promisePool.query('SELECT NOW()');
+        res.json({ message: 'Database connection successful', time: rows[0]['NOW()'] });
+    } catch (error) {
+        console.error('Database connection error:', error);
+        res.status(500).json({ message: 'Database connection error' });
+    }
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+module.exports = promisePool; // Export the promisePool for use in routes
+
+
+
+
+
+
+
+
+
+
+// require('dotenv').config();
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const authRoutes = require('./routes/authRoutes');
+
+// const app = express();
+
+// // Middleware
+// app.use(bodyParser.json());
+
+// // Routes
+// app.use('/api/imanage', authRoutes);
+
+// // Start the server
+// const PORT = process.env.PORT || 3000;
+// app.listen(PORT, () => {
+//     console.log(`Server running on port ${PORT}`);
+// });
 
 
 

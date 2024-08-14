@@ -18,13 +18,13 @@
                             <form id="registerForm">
                                 <h2>Register</h2>
                                 <div class="inputbox">
-                                    <input type="text" id="fullName" placeholder="Full Name" required>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="text" id="userName" placeholder="UserName" required>
+                                    <input type="text" id="userName" name="userName" placeholder="UserName" required>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="email" id="email" placeholder="Email" required>
+                                    <input type="email" id="email" name="email" placeholder="Email" required>
                                 </div>
                                 <div class="inputbox">
                                     <input type="text" id="address" placeholder="Address" required>
@@ -243,7 +243,7 @@
                         },
                         body: JSON.stringify(formData)
                     });
-
+                    console.log(formData);
                     const result = await response.json();
                     alert(result.message);
                 } catch (error) {
