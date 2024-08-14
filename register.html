@@ -15,22 +15,22 @@
                     <div class="form-value">
                         <!-- Register Form  -->
                         <div id="register-content" class="form-content" >
-                            <form>
+                            <form id="registerForm">
                                 <h2>Register</h2>
                                 <div class="inputbox">
-                                    <input type="text" placeholder="Full Name" required>
+                                    <input type="text" id="fullName" placeholder="Full Name" required>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="text" placeholder="UserName" required>
+                                    <input type="text" id="userName" placeholder="UserName" required>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="email" placeholder="Email" required>
+                                    <input type="email" id="email" placeholder="Email" required>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="text" placeholder="Address" required>
+                                    <input type="text" id="address" placeholder="Address" required>
                                 </div>
                                 <div class="inputbox">                                    
-                                    <select id="dropdown">
+                                    <select id="designation" class="dropdown">
                                         <option value="select desig"> Select Designation</option>
                                         <option value="hod">HOD</option>
                                         <option value="nf">Nodal Officer</option>
@@ -38,7 +38,7 @@
                                     </select>                                    
                                 </div>
                                 <div class="inputbox" >
-                                        <select id="dropdown">
+                                        <select id="department" class="dropdown">
                                         <option value="select dep">Select Department </option>
                                         <option value="at">Administrative Tribunal</option>
                                         <option value="ag">Advocate General</option>
@@ -121,28 +121,28 @@
                                     </select>
                                 </div>
                                 <div class="inputbox">
-                                    <input type="password" placeholder="Password">
+                                    <input type="password" id="password" placeholder="Password" required>
                                     <!-- <label>Password</label> -->
                                 </div>
                                 <!-- <div class="inputbox">
-                                    <select id="dropdown">
+                                    <select class="dropdown">
                                         <option value="select division">Select Division</option>
                                     </select>
                                 </div>
                                 <div class="inputbox">
-                                    <select id="dropdown">
+                                    <select class="dropdown">
                                         <option value="select sub-division">select sub-division</option>
-                                    </select id="dropdown">
+                                    </select class="dropdown">
                                 </div>
                                 <div class="inputbox">
-                                    <select id="dropdown">
+                                    <select class="dropdown">
                                         <option value="select state">Select State</option>
                                         <option value="north">North Goa</option>
                                         <option value="south">South Goa</option>
                                     </select>
                                 </div>
                                 <div class="inputbox">
-                                    <select id="dropdown">
+                                    <select class="dropdown">
                                         <option value="Select Taluka">Select Taluka</option>
                                         <option value="bardez">Bardez</option>
                                         <option value="bicholim">Bicholim</option>
@@ -158,7 +158,7 @@
                                     </select>
                                 </div>
                                 <div class="inputbox">
-                                    <select id="dropdown">
+                                    <select class="dropdown">
                                             <option value="Select Constituency">Select Constituency</option>
                                             <option value="pernem">Pernem</option>
                                             <option value="mandrem">Mandrem</option>
@@ -221,6 +221,39 @@
         </div>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('registerForm').addEventListener('submit', async function(event) {
+                event.preventDefault();
+
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    userName: document.getElementById('userName').value,
+                    email: document.getElementById('email').value,
+                    address: document.getElementById('address').value,
+                    password: document.getElementById('password').value,
+                    designation: document.getElementById('designation').value,
+                    department: document.getElementById('department').value
+                };
+
+                try {
+                    const response = await fetch('http://localhost:3000/api/imanage/register', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const result = await response.json();
+                    alert(result.message);
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('There was a problem with the registration.');
+                }
+            });
+        });
+    </script>
+    <!-- <script>
         document.getElementById('registerForm').addEventListener('submit', async function(event) {
             event.preventDefault();
 
@@ -289,6 +322,6 @@
             //     location.href = "./authentication/register.html";
             // });
         // });-
-    </script> 
+    </script>  -->
 </body>
 </html>

@@ -15,6 +15,9 @@ const createUser = async (fullName, userName, email, address, password, designat
             [fullName, userName, email, address, password, designation, department]
         );
         return rows;
+    } catch (error) {
+        console.error('Database error:', error);
+        throw error;
     } finally {
         connection.release();
     }
