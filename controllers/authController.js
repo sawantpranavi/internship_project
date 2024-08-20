@@ -23,7 +23,16 @@ const register = async (req, res) => {
     }
 };
 
-module.exports = { register };
+const login = async (req, res) => {
+    try {
+        console.log('Received login data:', req.body);  // Log the received data
+    } catch (error) {
+        console.error('Error during registration:', error);  // Log the error
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+};
+
+module.exports = { register, login };
 
 
 
