@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to iManage</h1>
+        <!-- <h1>Welcome to iManage</h1> -->
         <div class="header">
             <div id="search">
                 <div class="form-box" id="login-form">
@@ -253,75 +253,5 @@
             });
         });
     </script>
-    <!-- <script>
-        document.getElementById('registerForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
-
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                userName: document.getElementById('userName').value,
-                email: document.getElementById('email').value,
-                address: document.getElementById('address').value,
-                password: document.getElementById('password').value,
-                designation: document.getElementById('designation').value,
-                department: document.getElementById('department').value
-            };
-
-            try {
-                const response = await fetch('http://localhost:3000/api/imanage/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
-                });
-
-                const result = await response.json();
-                alert(result.message);
-            } catch (error) {
-                console.error('Error:', error);
-                alert('There was a problem with the registration.');
-            }
-        });
-    
-
-
-
-
-        // <--document.addEventListener('DOMContentLoaded', () => {
-        //     const loginButton = document.getElementById('login-button');
-        //     const loginForm = document.getElementById('login-form');
-        //     const loginOption = document.getElementById('login-option');
-        //     const registerOption = document.getElementById('register-option');
-        //     const loginContent = document.getElementById('login-content');
-        //     const registerContent = document.getElementById('register-content');
-
-            // Show login form popup
-            // loginButton.addEventListener('click', () => {
-            //     loginForm.style.display = 'flex';
-            // });
-
-            // Close the popup when clicking outside
-            // loginForm.addEventListener('click', (event) => {
-            //     if (event.target === loginForm) {
-            //         loginForm.style.display = 'none';
-            //     }
-            // });
-
-            // Show login form content
-            // loginOption.addEventListener('click', () => {
-            //     // loginContent.style.display = 'block';
-            //     // registerContent.style.display = 'none';
-            //     location.href = "./authentication/login.html";
-            // });
-
-            // // Show register form content
-            // registerOption.addEventListener('click', () => {
-            //     // loginContent.style.display = 'none';
-            //     // registerContent.style.display = 'block';
-            //     location.href = "./authentication/register.html";
-            // });
-        // });-
-    </script>  -->
-</body>
+    </body>
 </html>
