@@ -137,7 +137,7 @@ footer {
 </head>
 <body>
     <div class="container">
-         <h1>Welcome to iManage</h1>
+         <!-- <h1>Welcome to iManage</h1> -->
         <div class="header">
             <div id="search">
                 <div class="form-box" id="login-form">
@@ -148,13 +148,13 @@ footer {
                                 <h2>Login</h2>
                                 <div class="inputbox">
                                     <ion-icon name="mail-outline"></ion-icon>
-                                    <input type="email" required>
-                                    <label>Email</label>
+                                    <input type="email" placeholder="Email" required>
+                                    <!-- <label>Email</label> -->
                                 </div>
                                 <div class="inputbox">
                                     <ion-icon name="lock-closed-outline"></ion-icon>
-                                    <input type="password" required>
-                                    <label>Password</label>
+                                    <input type="password" placeholder="Password" required>
+                                    <!-- <label>Password</label> -->
                                 </div>
                                 <div class="forget">
                                     <label><input type="checkbox"> Remember Me</label>
@@ -176,6 +176,35 @@ footer {
             </p>    
         </div>
     </footer>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    alert('Login successful');
+                    // Redirect or handle successful login
+                } else {
+                    alert(result.message || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
     <!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
             const loginButton = document.getElementById('login-button');
