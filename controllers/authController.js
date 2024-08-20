@@ -35,7 +35,7 @@ const login = async (req, res) => {
         }
 
         // Find the user by email using the User model
-        const user = await User.findUserByEmail(email);
+        const user = await User.findOne({ email: email });
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });

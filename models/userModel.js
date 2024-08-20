@@ -1,5 +1,6 @@
 const mysql = require('mysql2/promise');
 
+// Create a connection pool
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -7,6 +8,7 @@ const pool = mysql.createPool({
     database: process.env.DB_NAME
 });
 
+// Function to create a user
 const createUser = async (fullName, userName, email, address, password, designation, department) => {
     const connection = await pool.getConnection();
     try {
@@ -23,6 +25,24 @@ const createUser = async (fullName, userName, email, address, password, designat
     }
 };
 
+// Function to find a user by email
+const findUserByEmail = async (email) => {
+    const connection = await pool.getConnection();
+    try {
+        const [rows] = await connection.query(
+            'SELECT * FROM users WHERE email = ?',
+            [email]
+        );
+        return rows[0]; // Return the first row if found, otherwise undefined
+    } catch (error) {
+        console.error('Database error:', error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
 module.exports = {
-    createUser
+    createUser,
+    findUserByEmail
 };
