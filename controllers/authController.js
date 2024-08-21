@@ -65,19 +65,19 @@ const addtocart = async (req, res) => {
 
         const { vendor, quantity, name } = req.body;
 
-        if (!product || !quantity) {
-            return res.status(400).json({ message: 'Product and quantity are required.' });
-        }
+        // if (!product || !quantity) {
+        //     return res.status(400).json({ message: 'Product and quantity are required.' });
+        // }
 
         // Find the user by email using the User model
         const userid = 6;
         const productid = await User.findprodid(name);
 
-        if (!user) {
+        if (!userid) {
             return res.status(401).json({ message: 'login/register' });
         }
 
-        const result = await User.createUser(userid, productid, vendor, quantity);
+        const result = await User.createcart(userid, productid.id, vendor, quantity);
         // Send success response with token
         res.status(200).json({
             message: 'Login successful',

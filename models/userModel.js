@@ -61,7 +61,7 @@ const findprodid = async (name) => {
     const connection = await pool.getConnection();
     try {
         const [rows] = await connection.query(
-            'SELECT * FROM products WHERE name = ?',
+            'SELECT id FROM product WHERE model = ?',
             [name]
         );
         return rows[0]; // Return the first row if found, otherwise undefined

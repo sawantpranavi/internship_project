@@ -40,26 +40,3 @@
 #maincontent a:hover {
     text-decoration: underline; /* Underline on hover */
 }
-
-/* Main Banner Section */
-/*.mainbanner {
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
-}
-
-.mainbanner div {
-    background: #f4f4f4;
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.mainbanner a {
-    text-decoration: none;
-    color: #007bff; /* Blue color for main banner links 
-    font-weight: bold;
-}
-
-.mainbanner a:hover {
-    text-decoration: underline; /* Underline on hover 
-}*/
