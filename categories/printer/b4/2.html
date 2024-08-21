@@ -163,8 +163,7 @@
                     <img src="../printers.png" alt="Printer">
                 </div>
                 <div class="product-info">
-                    <h2>HP</h2>
-                    <h2>CLJ CP5225DN</h2>
+                    <h2 id="name">HP CLJ CP5225DN</h2>
                     <br>
                     <p>INR 224931.60</p>
                     <div class="product-options">
@@ -175,7 +174,7 @@
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1">
                     </div>
-                    <button id="add-to-cart">ADD TO CART</button>
+                    <button id="add-to-cart" onclick="addToCart()">ADD TO CART</button>
                 </div>
             </section>
             <section class="product-specifications">
@@ -210,42 +209,34 @@
                 </div>
             </footer>
             <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    const loginButton = document.getElementById('login-button');
-                    const loginForm = document.getElementById('login-form');
-                    const loginOption = document.getElementById('login-option');
-                    const registerOption = document.getElementById('register-option');
-                    const loginContent = document.getElementById('login-content');
-                    const registerContent = document.getElementById('register-content');
-
-                    // Show login form popup
-                    loginButton.addEventListener('click', () => {
-                        loginForm.style.display = 'flex';
-                    });
-
-                    // Close the popup when clicking outside
-                    loginForm.addEventListener('click', (event) => {
-                        if (event.target === loginForm) {
-                            loginForm.style.display = 'none';
-                        }
-                    });
-
-                    // Show login form content
-                    loginOption.addEventListener('click', () => {
-                        loginContent.style.display = 'block';
-                        registerContent.style.display = 'none';
-                    });
-
-                    // Show register form content
-                    registerOption.addEventListener('click', () => {
-                        loginContent.style.display = 'none';
-                        registerContent.style.display = 'block';
-                    });
-
-                    document.getElementById('add-to-cart').addEventListener('click', function() {
-                        alert('Item added to cart!');
-                    });
-                });
+                async function addToCart() {
+                    const cartData = {
+                        vendor: document.getElementById('vendor').value,
+                        quantity: document.getElementById('quantity').value,
+                        name: document.getElementById('name').innerText,
+                    };
+                    
+                    try {
+                            const response = await fetch('http://localhost:3000/api/imanage/cart', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(cartData),
+                            });
+                    
+                            const result = await response.json();
+                            if (response.ok) {
+                                alert('Item added to cart!');
+                                // Redirect or handle successful login
+                            } else {
+                                alert(result.message || ' failed');
+                            }
+                        } catch (error) {
+                            console.error('Error:', error);
+                            alert('An error occurred. Please try again.');
+                            }        
+                }
             </script>
         </div>
     </body>
