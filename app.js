@@ -23,7 +23,7 @@ const app = express();
 
 // Middleware
 const cors = require('cors');
-app.use(cors({ origin: '*' }));
+app.use(cors({ origin: 'http://localhost', credentials: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 

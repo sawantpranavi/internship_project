@@ -23,7 +23,7 @@ const register = async (req, res) => {
         const token = jwt.sign({ id: result.id, email: result.email }, secretKey, { expiresIn: '1h' });
 
         // Set token in a cookie
-        res.cookie('authToken', token, { httpOnly: true, secure: true, sameSite: 'strict' });
+        res.cookie('authToken', token);
 
         res.status(201).json({ message: 'User registered successfully', result });
     } catch (error) {
@@ -59,7 +59,7 @@ const login = async (req, res) => {
         const token = jwt.sign({ id: user.id, email: user.email }, secretKey, { expiresIn: '1h' });
 
         // Set token in a cookie
-        res.cookie('authToken', token, { httpOnly: true, secure: true, sameSite: 'strict' });
+        res.cookie('authToken', token);
 
         res.status(200).json({ message: 'Login successful' });
     } catch (error) {
