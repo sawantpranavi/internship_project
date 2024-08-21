@@ -1,9 +1,12 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const User = require('../models/userModel');
 
+const secretKey = process.env.JWT_SECRET || 'your_secret_key';
+
+// Register function
 const register = async (req, res) => {
     try {
-        console.log('Received registration data:', req.body);  // Log the received data
         const { fullName, userName, email, address, password, designation, department } = req.body;
 
         if (!fullName || !userName || !email || !address || !password || !designation || !department) {
@@ -15,79 +18,78 @@ const register = async (req, res) => {
 
         // Create the user
         const result = await User.createUser(fullName, userName, email, address, hashedPassword, designation, department);
-        console.log('User registration successful:', result);  // Log success
+
+        // Generate JWT token
+        const token = jwt.sign({ id: result.id, email: result.email }, secretKey, { expiresIn: '1h' });
+
+        // Set token in a cookie
+        res.cookie('authToken', token, { httpOnly: true, secure: true, sameSite: 'strict' });
+
         res.status(201).json({ message: 'User registered successfully', result });
     } catch (error) {
-        console.error('Error during registration:', error);  // Log the error
+        console.error('Error during registration:', error);
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
 
-
+// Login function
 const login = async (req, res) => {
     try {
-        console.log('Received login data:', req.body); // Log the received data
-
         const { email, password } = req.body;
 
         if (!email || !password) {
             return res.status(400).json({ message: 'Email and password are required.' });
         }
 
-        // Find the user by email using the User model
-        const user = await User.findUserByEmail( email );
+        // Find the user by email
+        const user = await User.findUserByEmail(email);
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
         }
 
-        // Compare the password with the hashed password in the database
+        // Compare the password
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
             return res.status(401).json({ message: 'Invalid email or password' });
         }
 
-        // Send success response with token
-        res.status(200).json({
-            message: 'Login successful',
-        });
+        // Generate JWT token
+        const token = jwt.sign({ id: user.id, email: user.email }, secretKey, { expiresIn: '1h' });
 
+        // Set token in a cookie
+        res.cookie('authToken', token, { httpOnly: true, secure: true, sameSite: 'strict' });
+
+        res.status(200).json({ message: 'Login successful' });
     } catch (error) {
-        console.error('Error during login:', error); // Log the error
+        console.error('Error during login:', error);
         res.status(500).json({ message: 'Server error', error: error.message });
     }
 };
 
-const addtocart = async (req, res) => {
-    try {
-        console.log('Received cart data:', req.body); // Log the received data
+module.exports = { register, login };
 
+router.post('/addtocart', async (req, res) => {
+    try {
         const { vendor, quantity, name } = req.body;
 
-        // if (!product || !quantity) {
-        //     return res.status(400).json({ message: 'Product and quantity are required.' });
-        // }
-
-        // Find the user by email using the User model
-        const userid = 6;
+        const userId = req.user.id;  // The ID of the authenticated user
         const productid = await User.findprodid(name);
 
-        if (!userid) {
-            return res.status(401).json({ message: 'login/register' });
-        }
+        const result = await User.createcart(userId, productid.id, vendor, quantity);
 
-        const result = await User.createcart(userid, productid.id, vendor, quantity);
-        // Send success response with token
-        res.status(200).json({
-            message: 'Login successful',
-        });
+        res.status(200).json({ message: 'Product added to cart successfully' });
 
     } catch (error) {
-        console.error('Error during login:', error); // Log the error
+        console.error('Error during adding to cart:', error);
         res.status(500).json({ message: 'Server error', error: error.message });
     }
-}
+});
+
+module.exports = router;
+
+
 module.exports = { register, login, addtocart };
 
 

@@ -1,8 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const authRoutes = require('./routes/authRoutes');
+const authRoutes = require('./routes/Routes');
 const mysql = require('mysql2');
+const cookieParser = require('cookie-parser');
+
+
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
@@ -10,7 +13,7 @@ const pool = mysql.createPool({
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
-    port: 3306 // Default port for MySQL
+    port: process.env.DB_PORT
 });
 
 // Promisify the pool query method for use with async/await
@@ -22,20 +25,11 @@ const app = express();
 const cors = require('cors');
 app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // Routes
 app.use('/api/imanage', authRoutes);
 
-// Test database connection
-app.get('/test-db', async (req, res) => {
-    try {
-        const [rows] = await promisePool.query('SELECT NOW()');
-        res.json({ message: 'Database connection successful', time: rows[0]['NOW()'] });
-    } catch (error) {
-        console.error('Database connection error:', error);
-        res.status(500).json({ message: 'Database connection error' });
-    }
-});
 
 // Start the server
 const PORT = process.env.PORT || 3000;
