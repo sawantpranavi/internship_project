@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const authRoutes = require('./routes/Routes');
+const authRoutes = require('./backend/routes/Routes');
 const mysql = require('mysql2');
 const cookieParser = require('cookie-parser');
 
