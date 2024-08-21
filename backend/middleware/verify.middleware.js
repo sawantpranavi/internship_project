@@ -5,7 +5,7 @@ const authenticateToken = (req, res, next) => {
     try {
         // Get the token from the cookies
         const token = req.cookies.authToken;
-
+        console.log(token);
         // If no token is present, return an error
         if (!token) {
             return res.status(401).json({ message: 'Unauthorized: No token provided' });

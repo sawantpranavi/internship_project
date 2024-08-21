@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = require('../models/userModel');
+const User = require('../Services/dbService');
 
 const secretKey = process.env.JWT_SECRET || 'your_secret_key';
 
@@ -70,7 +70,7 @@ const login = async (req, res) => {
 
 module.exports = { register, login };
 
-router.post('/addtocart', async (req, res) => {
+const addtocart = async (req, res) => {
     try {
         const { vendor, quantity, name } = req.body;
 
@@ -85,11 +85,6 @@ router.post('/addtocart', async (req, res) => {
         console.error('Error during adding to cart:', error);
         res.status(500).json({ message: 'Server error', error: error.message });
     }
-});
-
-module.exports = router;
-
+};
 
 module.exports = { register, login, addtocart };
-
-
