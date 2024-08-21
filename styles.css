@@ -239,7 +239,17 @@ ul .dropdown li a {
     height: 450px;
     text-align: center;
     padding-top: 20px;
-   position: relative;
+    position: relative;
+}
+
+h2 {
+    background-color: #3866c2;
+    font-size: 35px;
+}
+
+.cat {
+    font-size: 15px;
+    color: rgb(3, 65, 68);
 }
 
 /* Footer */
@@ -289,7 +299,6 @@ footer #copyright{
 
 }
 
-
 .container .text1{
     position:absolute;
     color:white;
@@ -297,5 +306,19 @@ footer #copyright{
     top:68%;
     font-size:37px;
     transform: translate(-50%,-50%);
+}
 
+/* CSS for Shopping Cart Icon */
+.cart-icon {
+    position: fixed;
+    top: 20px; /* Adjust the vertical position */
+    right: 20px; /* Adjust the horizontal position */
+    font-size: 24px;
+    color: #000; /* Adjust the color to match your design */
+    text-decoration: none;
+    z-index: 1000; /* Ensure it's on top of other elements */
+}
+
+.cart-icon:hover {
+    color: #555; /* Change color on hover */
 }
