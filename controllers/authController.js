@@ -35,7 +35,7 @@ const login = async (req, res) => {
         }
 
         // Find the user by email using the User model
-        const user = await User.findOne({ email: email });
+        const user = await User.findUserByEmail( email );
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
@@ -51,7 +51,6 @@ const login = async (req, res) => {
         // Send success response with token
         res.status(200).json({
             message: 'Login successful',
-            token, // Send token for authentication
         });
 
     } catch (error) {

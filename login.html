@@ -198,6 +198,7 @@ footer {
                 if (response.ok) {
                     alert('Login successful');
                     // Redirect or handle successful login
+                    window.location.href = '/imanage/index.html';
                 } else {
                     alert(result.message || 'Login failed');
                 }
