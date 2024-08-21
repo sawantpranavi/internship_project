@@ -25,6 +25,22 @@ const createUser = async (fullName, userName, email, address, password, designat
     }
 };
 
+const createcart = async (userid, productid, vendor, quantity) => {
+    const connection = await pool.getConnection();
+    try {
+        const [rows] = await connection.query(
+            'INSERT INTO cart (userid, productid, quantity, vendor) VALUES (?, ?, ?, ?)',
+            [userid, productid, quantity, vendor]
+        );
+        return rows;
+    } catch (error) {
+        console.error('Database error:', error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+};
+
 // Function to find a user by email
 const findUserByEmail = async (email) => {
     const connection = await pool.getConnection();
@@ -41,8 +57,24 @@ const findUserByEmail = async (email) => {
         connection.release();
     }
 };
-
+const findprodid = async (name) => {
+    const connection = await pool.getConnection();
+    try {
+        const [rows] = await connection.query(
+            'SELECT * FROM products WHERE name = ?',
+            [name]
+        );
+        return rows[0]; // Return the first row if found, otherwise undefined
+    } catch (error) {
+        console.error('Database error:', error);
+        throw error;
+    } finally {
+        connection.release();
+    }
+} 
 module.exports = {
     createUser,
-    findUserByEmail
+    findUserByEmail,
+    createcart,
+    findprodid
 };

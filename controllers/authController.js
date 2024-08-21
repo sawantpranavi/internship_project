@@ -63,30 +63,25 @@ const addtocart = async (req, res) => {
     try {
         console.log('Received cart data:', req.body); // Log the received data
 
-        // const { product, quantity } = req.body;
+        const { vendor, quantity, name } = req.body;
 
-        // if (!product || !quantity) {
-        //     return res.status(400).json({ message: 'Product and quantity are required.' });
-        // }
+        if (!product || !quantity) {
+            return res.status(400).json({ message: 'Product and quantity are required.' });
+        }
 
-        // // Find the user by email using the User model
-        // const user = await User.findUserByEmail( email );
+        // Find the user by email using the User model
+        const userid = 6;
+        const productid = await User.findprodid(name);
 
-        // if (!user) {
-        //     return res.status(401).json({ message: 'Invalid email or password' });
-        // }
+        if (!user) {
+            return res.status(401).json({ message: 'login/register' });
+        }
 
-        // // Compare the password with the hashed password in the database
-        // const isMatch = await bcrypt.compare(password, user.password);
-
-        // if (!isMatch) {
-        //     return res.status(401).json({ message: 'Invalid email or password' });
-        // }
-
-        // // Send success response with token
-        // res.status(200).json({
-        //     message: 'Login successful',
-        // });
+        const result = await User.createUser(userid, productid, vendor, quantity);
+        // Send success response with token
+        res.status(200).json({
+            message: 'Login successful',
+        });
 
     } catch (error) {
         console.error('Error during login:', error); // Log the error
