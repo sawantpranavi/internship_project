@@ -73,7 +73,7 @@ module.exports = { register, login };
 const addtocart = async (req, res) => {
     try {
         const { vendor, quantity, name } = req.body;
-
+        console.log(req.body);
         const userId = req.user.id;  // The ID of the authenticated user
         const productid = await User.findprodid(name);
 

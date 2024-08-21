@@ -27,6 +27,7 @@ const createUser = async (fullName, userName, email, address, password, designat
 
 const createcart = async (userid, productid, vendor, quantity) => {
     const connection = await pool.getConnection();
+    console.log("here");
     try {
         const [rows] = await connection.query(
             'INSERT INTO cart (userid, productid, quantity, vendor) VALUES (?, ?, ?, ?)',
