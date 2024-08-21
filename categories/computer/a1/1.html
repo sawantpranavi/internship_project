@@ -1,249 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iManage | Computer and Laptops</title>
-    <link rel="stylesheet" href="../../categories.css">
+    <link rel="stylesheet" href="../../categories.css" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        nav {
-            background-color: #ffffff;
-            padding: 20px 20px;
-            /* border-bottom: 1px solid #e0e0e0; */
-        }
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin-right: 5px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .product-detail {
-            display: flex;
-            align-items: center;
-            /* justify-content: center; */
-            /* padding: 50px; */
-            background-color: #ffffff;
-            /* margin: 20px auto; */
-            /* max-width: 800px; */
-            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-        }
-        .product-image img {
-            max-width: 400px;
-            margin-right: 100px;
-            margin-left: 100px;
-        }
-        .product-info {
-            max-width: 500px;
-        }
-        .product-info h2 {
-            font-size: 30px;
-            margin: 0;
-        }
-        .product-info p {
-            font-size: 20px;
-            color: #777;
-        }
-        .product-options {
-            margin: 20px 0;
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+      }
+      nav {
+        background-color: #ffffff;
+        padding: 20px 20px;
+        /* border-bottom: 1px solid #e0e0e0; */
+      }
+      nav a {
+        color: #333;
+        text-decoration: none;
+        margin-right: 5px;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .product-detail {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        /* padding: 50px; */
+        background-color: #ffffff;
+        /* margin: 20px auto; */
+        /* max-width: 800px; */
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+      }
+      .product-image img {
+        max-width: 400px;
+        margin-right: 100px;
+        margin-left: 100px;
+      }
+      .product-info {
+        max-width: 500px;
+      }
+      .product-info h2 {
+        font-size: 30px;
+        margin: 0;
+      }
+      .product-info p {
+        font-size: 20px;
+        color: #777;
+      }
+      .product-options {
+        margin: 20px 0;
+      }
+      .product-options label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .product-options select,
+      .product-options input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button#add-to-cart {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        height: 50px;
+        width: 100%;
+      }
+      button#add-to-cart:hover {
+        background-color: #555;
+      }
 
-        }
-        .product-options label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .product-options select,
-        .product-options input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button#add-to-cart {
-            background-color: #333;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            height: 50px;
-            width: 100%;
-        }
-        button#add-to-cart:hover {
-            background-color: #555;
-        }
-
-        /* description */
-       .product-specifications {
-            background-color: #ffffff;
-            margin: 20px auto;
-            padding: 20px;
-            /* max-width: 800px; */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .specifications-header {
-            background-color: #22438c;
-            padding: 10px;
-            color: white;
-            text-align: center;
-        }
-        .specifications-body {
-            padding: 30px;
-        }
-        .specifications-body h3 {
-            color: #333;
-        }
-        .specs-list {
-            display: flex;
-            justify-content: space-between;
-        }
-        .specs-list ul {
-            list-style-type: none;
-            /* padding: 0; */
-            /* margin: 0; */
-        }
-        .specs-list li {
-            margin-bottom: 10px;
-            color: #777;
-        }
-    </style> 
-</head>
-    <body>
-        <div class="container">
-            <h1>Welcome to iManage</h1>
-            <br>
-            <div class="header">
-            </div>
-            <br>
-            <div>
-                <ul class="menu">
-                    <li>
-                        <a href="#">Categories</a>
-                        <ul class="dropdown">
-                            <li><a href="../../computer/comp.html">Computers and Laptops - A</a></li>
-                            <li><a href="../../printer/printers.html">Printers - B</a></li>
-                            <li><a href="../../scanner/scanners.html">Scanners - C</a></li>
-                            <li><a href="../../plotters/plotters.html">Plotters - D</a></li>
-                            <li><a href="../../ups/ups.html">UPS Online Offline - E</a></li>
-                            <li><a href="../../xerox/xerox.html">Photocopiers, Xerox Machines - F</a></li>
-                            <li><a href="../../mobilitydevices/mobility.html">Mobility Devices - G</a></li>
-                            <li><a href="../../videodevices/videounits.html">Video Conferencing Devices - H</a></li>
-                            <li><a href="../../displayunits/displayunits.html">Display Units - I</a></li>
-                            <li><a href="../../miscellaneous/miscellaneous.html">Miscellaneous - J</a></li>
-                            <li><a href="../../biometric/biometrics.html">Biometrics Attendance Device - K</a></li>
-                            <li><a href="../../antivirus/antivirus.html">Anti Virus - L</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Explore Shop</a></li>
-                    <li>
-                        <a href="#">Services</a>
-                        <ul class="dropdown">
-                            <li><a href="#">New Procurement</a></li>
-                            <li><a href="#">AMC Request</a></li>
-                            <li><a href="#">View Tickets</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../../../contactus/contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-            <nav>
-                <a href="../comp.html">Computers and Laptops</a> &gt; 
-                <a href="../a1/compa1.html">Desktop Computer Intel core i3 (Category A1)</a> &gt; 
-                <a href="#">Veriton M200-H510</a>
-            </nav>
-            <section class="product-detail">
-                <div class="product-image">
-                    <img src="../computer.png" alt="Desktop Computer">
-                </div>
-                <div class="product-info">
-                    <h2 id="name">Acer Veriton M200-H510</h2>
-                    <br>
-                    <p>INR 63,808.50</p>
-                    <div class="product-options">
-                        <label for="vendor">Select Vendor</label>
-                        <select id="vendor">
-                            <option value="M/s Centaur Computer Technology Pvt. Ltd.">M/s Centaur Computer Technology Pvt. Ltd.</option>
-                            <option value="M/s Digiserve">M/s Digiserve</option>
-                        </select>
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" name="quantity" value="1" min="1">
-                    </div>
-                    <button id="add-to-cart" onclick="addToCart()">ADD TO CART</button>
-                </div>
-            </section>
-            <section class="product-specifications">
-                <div class="specifications-header">
-                    <h2>DESCRIPTION</h2>
-                </div>
-                <div class="specifications-body">
-                    <h3>PRODUCT SPECIFICATIONS</h3>
-                    <div class="specs-list">
-                        <ul>
-                            <li>- Processor: Intel Core i3 11TH GEN or higher(min 8M Cache, 2.0GHz up to 4.00GHz)</li>
-                            <li>- SSD capacity: 256 GB SSD or higher</li>
-                            <li>- Keyboard: 104 keys or higher, OEM Keyboard</li>
-                            <li>- Mouse: Optical Scroll with USB interface</li>
-                            <li>- Optical Drive: 8X or higher DVD-R/W</li>
-                            <li>- Preloaded Softwares: Windows 11 Professional preloaded or higher, Antivirus with 3 Years Subscription</li>
-                            <li>- OS Certification: Windows/ Linux Certifications</li>
-                            <li>- Warranty: 3 Years Comprehensive onsite warranty (Covering all parts including OS)</li>
-                        </ul>
-                        <ul>
-                            <li>- Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
-                            <li>- Display: 19.5" or higher, LED TFT Digital Color Monitor TCO-05 certified</li>
-                            <li>- Ports: 6 USB Ports including 2 USB 3.0 Ports (with at least 2 in front), audio ports for microphone and headphone in front</li>
-                            <li>- Networking Features: 10/100/1000 Mbps on board Integrated Network Port & Integrated wireless b/g/n</li>
-                            <li>- Recovery: Image of the OS should be available on SSD, additionally the same should be made available on USB / CD</li>
-                            <li>- Patch Cord: CAT6 Patch Cord of 3 Meters length (Factory crimped only)</li>
-                            <li>- Open Office Suite: Preinstall Open Office suite</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <footer>
-                <div id="copyright">
-                    <p>© 2024
-                        <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
-                        - All Rights Reserved.
-                    </p>    
-                </div>
-            </footer>
-            <script>
-                async function addToCart() {
-                    const cartData = {
-                        vendor: document.getElementById('vendor').value,
-                        quantity: document.getElementById('quantity').value,
-                        name: document.getElementById('name').innerText,
-                    };
-                    
-                    try {
-                            const response = await fetch('http://localhost:3000/api/imanage/cart', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(cartData),
-                            });
-                    
-                            const result = await response.json();
-                            if (response.ok) {
-                                alert('Item added to cart!');
-                                // Redirect or handle successful login
-                            } else {
-                                alert(result.message || ' failed');
-                            }
-                        } catch (error) {
-                            console.error('Error:', error);
-                            alert('An error occurred. Please try again.');
-                            }        
-                }
-            </script>
+      /* description */
+      .product-specifications {
+        background-color: #ffffff;
+        margin: 20px auto;
+        padding: 20px;
+        /* max-width: 800px; */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .specifications-header {
+        background-color: #22438c;
+        padding: 10px;
+        color: white;
+        text-align: center;
+      }
+      .specifications-body {
+        padding: 30px;
+      }
+      .specifications-body h3 {
+        color: #333;
+      }
+      .specs-list {
+        display: flex;
+        justify-content: space-between;
+      }
+      .specs-list ul {
+        list-style-type: none;
+        /* padding: 0; */
+        /* margin: 0; */
+      }
+      .specs-list li {
+        margin-bottom: 10px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to iManage</h1>
+      <br />
+      <div class="header"></div>
+      <br />
+      <div>
+        <ul class="menu">
+          <li>
+            <a href="#">Categories</a>
+            <ul class="dropdown">
+              <li>
+                <a href="../../computer/comp.html">Computers and Laptops - A</a>
+              </li>
+              <li><a href="../../printer/printers.html">Printers - B</a></li>
+              <li><a href="../../scanner/scanners.html">Scanners - C</a></li>
+              <li><a href="../../plotters/plotters.html">Plotters - D</a></li>
+              <li><a href="../../ups/ups.html">UPS Online Offline - E</a></li>
+              <li>
+                <a href="../../xerox/xerox.html"
+                  >Photocopiers, Xerox Machines - F</a
+                >
+              </li>
+              <li>
+                <a href="../../mobilitydevices/mobility.html"
+                  >Mobility Devices - G</a
+                >
+              </li>
+              <li>
+                <a href="../../videodevices/videounits.html"
+                  >Video Conferencing Devices - H</a
+                >
+              </li>
+              <li>
+                <a href="../../displayunits/displayunits.html"
+                  >Display Units - I</a
+                >
+              </li>
+              <li>
+                <a href="../../miscellaneous/miscellaneous.html"
+                  >Miscellaneous - J</a
+                >
+              </li>
+              <li>
+                <a href="../../biometric/biometrics.html"
+                  >Biometrics Attendance Device - K</a
+                >
+              </li>
+              <li>
+                <a href="../../antivirus/antivirus.html">Anti Virus - L</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">Explore Shop</a></li>
+          <li>
+            <a href="#">Services</a>
+            <ul class="dropdown">
+              <li><a href="#">New Procurement</a></li>
+              <li><a href="#">AMC Request</a></li>
+              <li><a href="#">View Tickets</a></li>
+            </ul>
+          </li>
+          <li><a href="../../../contactus/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <nav>
+        <a href="../comp.html">Computers and Laptops</a> &gt;
+        <a href="../a1/compa1.html"
+          >Desktop Computer Intel core i3 (Category A1)</a
+        >
+        &gt;
+        <a href="#">Veriton M200-H510</a>
+      </nav>
+      <section class="product-detail">
+        <div class="product-image">
+          <img src="../computer.png" alt="Desktop Computer" />
         </div>
-    </body>
+        <div class="product-info">
+          <h2 id="name">Acer Veriton M200-H510</h2>
+          <br />
+          <p>INR 63,808.50</p>
+          <div class="product-options">
+            <label for="vendor">Select Vendor</label>
+            <select id="vendor">
+              <option value="M/s Centaur Computer Technology Pvt. Ltd.">
+                M/s Centaur Computer Technology Pvt. Ltd.
+              </option>
+              <option value="M/s Digiserve">M/s Digiserve</option>
+            </select>
+            <label for="quantity">Quantity:</label>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              value="1"
+              min="1"
+            />
+          </div>
+          <button id="add-to-cart" onclick="addToCart()">ADD TO CART</button>
+        </div>
+      </section>
+      <section class="product-specifications">
+        <div class="specifications-header">
+          <h2>DESCRIPTION</h2>
+        </div>
+        <div class="specifications-body">
+          <h3>PRODUCT SPECIFICATIONS</h3>
+          <div class="specs-list">
+            <ul>
+              <li>
+                - Processor: Intel Core i3 11TH GEN or higher(min 8M Cache,
+                2.0GHz up to 4.00GHz)
+              </li>
+              <li>- SSD capacity: 256 GB SSD or higher</li>
+              <li>- Keyboard: 104 keys or higher, OEM Keyboard</li>
+              <li>- Mouse: Optical Scroll with USB interface</li>
+              <li>- Optical Drive: 8X or higher DVD-R/W</li>
+              <li>
+                - Preloaded Softwares: Windows 11 Professional preloaded or
+                higher, Antivirus with 3 Years Subscription
+              </li>
+              <li>- OS Certification: Windows/ Linux Certifications</li>
+              <li>
+                - Warranty: 3 Years Comprehensive onsite warranty (Covering all
+                parts including OS)
+              </li>
+            </ul>
+            <ul>
+              <li>- Memory: 8 GB, DDR4 RAM with 32 GB Expandability</li>
+              <li>
+                - Display: 19.5" or higher, LED TFT Digital Color Monitor TCO-05
+                certified
+              </li>
+              <li>
+                - Ports: 6 USB Ports including 2 USB 3.0 Ports (with at least 2
+                in front), audio ports for microphone and headphone in front
+              </li>
+              <li>
+                - Networking Features: 10/100/1000 Mbps on board Integrated
+                Network Port & Integrated wireless b/g/n
+              </li>
+              <li>
+                - Recovery: Image of the OS should be available on SSD,
+                additionally the same should be made available on USB / CD
+              </li>
+              <li>
+                - Patch Cord: CAT6 Patch Cord of 3 Meters length (Factory
+                crimped only)
+              </li>
+              <li>- Open Office Suite: Preinstall Open Office suite</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div id="copyright">
+          <p>
+            © 2024
+            <a
+              style="text-decoration: none; color: #fff; padding: 0 10px"
+              href="https://infotech.goa.gov.in/"
+              target="_blank"
+              >Info Tech Corporation of Goa Ltd.</a
+            >
+            - All Rights Reserved.
+          </p>
+        </div>
+      </footer>
+      <script>
+        async function addToCart() {
+          const cartData = {
+            vendor: document.getElementById("vendor").value,
+            quantity: document.getElementById("quantity").value,
+            name: document.getElementById("name").innerText,
+          };
+
+          try {
+            const response = await fetch(
+              "http://localhost:3000/api/imanage/cart",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(cartData),
+                credentials: "include", // This will include cookies with the request
+              }
+            );
+
+            const result = await response.json();
+            if (response.ok) {
+              alert("Item added to cart!");
+              // Redirect or handle successful login
+            } else {
+              alert(result.message || " failed");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert("An error occurred. Please try again.");
+          }
+        }
+      </script>
+    </div>
+  </body>
 </html>

@@ -1,130 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>iManage | Home</title>
-    <link rel="stylesheet" href="../../trial.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../../trial.css" />
+  </head>
+  <body>
     <div class="container">
-        <!-- <h1>Welcome to iManage</h1> -->
-        <div class="header">
-            <div id="search">
-                <div class="form-box" id="login-form">
-                    <div class="form-value">
-                        <!-- Register Form  -->
-                        <div id="register-content" class="form-content" >
-                            <form id="registerForm">
-                                <h2>Register</h2>
-                                <div class="inputbox">
-                                    <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
-                                </div>
-                                <div class="inputbox">
-                                    <input type="text" id="userName" name="userName" placeholder="UserName" required>
-                                </div>
-                                <div class="inputbox">
-                                    <input type="email" id="email" name="email" placeholder="Email" required>
-                                </div>
-                                <div class="inputbox">
-                                    <input type="text" id="address" placeholder="Address" required>
-                                </div>
-                                <div class="inputbox">                                    
-                                    <select id="designation" class="dropdown">
-                                        <option value="select desig"> Select Designation</option>
-                                        <option value="hod">HOD</option>
-                                        <option value="nf">Nodal Officer</option>
-                                        <option value="user">User</option>
-                                    </select>                                    
-                                </div>
-                                <div class="inputbox" >
-                                        <select id="department" class="dropdown">
-                                        <option value="select dep">Select Department </option>
-                                        <option value="at">Administrative Tribunal</option>
-                                        <option value="ag">Advocate General</option>
-                                        <option value="agri">Agriculture</option>
-                                        <option value="ah">Animal Husbandry & veterinary Services</option>
-                                        <option value="arch">Archives</option>
-                                        <option value="art">Art & Culture</option>
-                                        <option value="cac">Cacora ITI</option>
-                                        <option value="ca">Civil Aviation</option>
-                                        <option value="cs">Civil Supplies And Consumer Affairs</option>
-                                        <option value="coll">Collectorate & District Magistrate South Goa District</option>
-                                        <option value="coll north">Collectorate North Goa District</option>
-                                        <option value="comm">Commercial Taxes</option>
-                                        <option value="cons">Consumer Disputes Redressal Commission</option>
-                                        <option value="dept">Department of Co-operation</option>
-                                        <option value="dept public">Department of Public Grievances</option>
-                                        <option value="dire">Directorate Of Education</option>
-                                        <option value="dire health">Directorate Of Health Services</option>
-                                        <option value="dire tech">Directorate of Technical Education</option>
-                                        <option value="scheme">E.S.I.Scheme</option>
-                                        <option value="edu">Education</option>
-                                        <option value="elect">Electricity Department</option>
-                                        <option value="envir">Environment & Climate Change</option>
-                                        <option value="exicse">Excise</option>
-                                        <option value="factories">Factories And Boilers</option>
-                                        <option value="fire">Fire & Emergency</option>
-                                        <option value="fish">Fisheries</option>
-                                        <option value="chief">Goa Chief Electoral Office</option>
-                                        <option value="college">Goa College of Architecture</option>
-                                        <option value="energy">Goa Energy Development Agency</option>
-                                        <option value="gaze">Goa Gazetteer Development</option>
-                                        <option value="govt">Goa Government Colleges</option>
-                                        <option value="human">Goa Human Rights Commission</option>
-                                        <option value="tech">Goa Information Technology Development Corporation(GITDC)</option>
-                                        <option value="legis">Goa Legislator's Forum</option>
-                                        <option value="secret">Goa Legislature Secretariat</option>
-                                        <option value="lok">Goa Lokayukta</option>
-                                        <option value="public">Goa Public Service Commission</option>
-                                        <option value="lib">Goa State Central Library</option>
-                                        <option value="election">Goa State Election Commission</option>
-                                        <option value="ïnfo">Goa State Infomation Commission</option>
-                                        <option value="urban">Goa State urban Development Agency</option>
-                                        <option value="acco">Government Accomodation</option>
-                                        <option value="professional">Government Professional Colleges</option>
-                                        <option value="handicrafts">Handicrafts,Textile And Coir</option>
-                                        <option value="court">High Court Of Bombay</option>
-                                        <option value="home">Home Gaurds And Civil Defence Organisation</option>
-                                        <option value="industry">Industries,Trade And Commerce</option>
-                                        <option value="info tech">Info Tech Corporation Of Goa Limited</option>
-                                        <option value="information">Information And Publicity</option>
-                                        <option value="information tech">Information Technology,Electronics & communications</option>
-                                        <option value="nursing">Institute Of Nursing Education</option>
-                                        <option value="psychiatry">Institute Of Psychiatry & Human Behavior</option>
-                                        <option value="institute">Institute Of Public Assistance(Provedoria)</option>
-                                        <option value="judiciary">Judiciary</option>
-                                        <option value="labour">Labour And Employment</option>
-                                        <option value="legal">Legal Metrology</option>
-                                        <option value="mamlatdar">Mamlatdar In South District</option>
-                                        <option value="mines">Mines And Geology</option>
-                                        <option value="Museum">Museum Department</option>
-                                        <option value="new">New And Renewable Energy</option>
-                                        <option value="notary">Notary Services</option>
-                                        <option value="office">Office of The Joint Director Of Accounts</option>
-                                        <option value="official">Official Language</option>
-                                        <option value="old">Old Age Homes</option>
-                                        <option value="ombudsman">Ombudsman</option>
-                                        <option value="panchayats">panchayats</option>
-                                        <option value="planning">Planning Statistics & Evaluation</option>
-                                        <option value="police">Police</option>
-                                        <option value="ports">Ports</option>
-                                        <option value="print">Printing & Stationary</option>
-                                        <option value="prisons">Prisons</option>
-                                        <option value="prosecution">Prosecution</option>
-                                        <option value="private">Public Private Partnership</option>
-                                        <option value="pwd">Public Works Department</option>
-                                        <option value="rajiv">Rajiv Gandhi Kala Mandir</option>
-                                        <option value="ravindra">Ravindra Bhavan</option>
-                                        <option value="secretariat">Secretariat</option>
-                                        <option value="accounts">State Government Departments Accounts</option>
-                                    </select>
-                                </div>
-                                <div class="inputbox">
-                                    <input type="password" id="password" placeholder="Password" required>
-                                    <!-- <label>Password</label> -->
-                                </div>
-                                <!-- <div class="inputbox">
+      <!-- <h1>Welcome to iManage</h1> -->
+      <div class="header">
+        <div id="search">
+          <div class="form-box" id="login-form">
+            <div class="form-value">
+              <!-- Register Form  -->
+              <div id="register-content" class="form-content">
+                <form id="registerForm">
+                  <h2>Register</h2>
+                  <div class="inputbox">
+                    <input
+                      type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="Full Name"
+                      required
+                    />
+                  </div>
+                  <div class="inputbox">
+                    <input
+                      type="text"
+                      id="userName"
+                      name="userName"
+                      placeholder="UserName"
+                      required
+                    />
+                  </div>
+                  <div class="inputbox">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div class="inputbox">
+                    <input
+                      type="text"
+                      id="address"
+                      placeholder="Address"
+                      required
+                    />
+                  </div>
+                  <div class="inputbox">
+                    <select id="designation" class="dropdown">
+                      <option value="select desig">Select Designation</option>
+                      <option value="hod">HOD</option>
+                      <option value="nf">Nodal Officer</option>
+                      <option value="user">User</option>
+                    </select>
+                  </div>
+                  <div class="inputbox">
+                    <select id="department" class="dropdown">
+                      <option value="select dep">Select Department</option>
+                      <option value="at">Administrative Tribunal</option>
+                      <option value="ag">Advocate General</option>
+                      <option value="agri">Agriculture</option>
+                      <option value="ah">
+                        Animal Husbandry & veterinary Services
+                      </option>
+                      <option value="arch">Archives</option>
+                      <option value="art">Art & Culture</option>
+                      <option value="cac">Cacora ITI</option>
+                      <option value="ca">Civil Aviation</option>
+                      <option value="cs">
+                        Civil Supplies And Consumer Affairs
+                      </option>
+                      <option value="coll">
+                        Collectorate & District Magistrate South Goa District
+                      </option>
+                      <option value="coll north">
+                        Collectorate North Goa District
+                      </option>
+                      <option value="comm">Commercial Taxes</option>
+                      <option value="cons">
+                        Consumer Disputes Redressal Commission
+                      </option>
+                      <option value="dept">Department of Co-operation</option>
+                      <option value="dept public">
+                        Department of Public Grievances
+                      </option>
+                      <option value="dire">Directorate Of Education</option>
+                      <option value="dire health">
+                        Directorate Of Health Services
+                      </option>
+                      <option value="dire tech">
+                        Directorate of Technical Education
+                      </option>
+                      <option value="scheme">E.S.I.Scheme</option>
+                      <option value="edu">Education</option>
+                      <option value="elect">Electricity Department</option>
+                      <option value="envir">
+                        Environment & Climate Change
+                      </option>
+                      <option value="exicse">Excise</option>
+                      <option value="factories">Factories And Boilers</option>
+                      <option value="fire">Fire & Emergency</option>
+                      <option value="fish">Fisheries</option>
+                      <option value="chief">Goa Chief Electoral Office</option>
+                      <option value="college">
+                        Goa College of Architecture
+                      </option>
+                      <option value="energy">
+                        Goa Energy Development Agency
+                      </option>
+                      <option value="gaze">Goa Gazetteer Development</option>
+                      <option value="govt">Goa Government Colleges</option>
+                      <option value="human">Goa Human Rights Commission</option>
+                      <option value="tech">
+                        Goa Information Technology Development
+                        Corporation(GITDC)
+                      </option>
+                      <option value="legis">Goa Legislator's Forum</option>
+                      <option value="secret">
+                        Goa Legislature Secretariat
+                      </option>
+                      <option value="lok">Goa Lokayukta</option>
+                      <option value="public">
+                        Goa Public Service Commission
+                      </option>
+                      <option value="lib">Goa State Central Library</option>
+                      <option value="election">
+                        Goa State Election Commission
+                      </option>
+                      <option value="ïnfo">
+                        Goa State Infomation Commission
+                      </option>
+                      <option value="urban">
+                        Goa State urban Development Agency
+                      </option>
+                      <option value="acco">Government Accomodation</option>
+                      <option value="professional">
+                        Government Professional Colleges
+                      </option>
+                      <option value="handicrafts">
+                        Handicrafts,Textile And Coir
+                      </option>
+                      <option value="court">High Court Of Bombay</option>
+                      <option value="home">
+                        Home Gaurds And Civil Defence Organisation
+                      </option>
+                      <option value="industry">
+                        Industries,Trade And Commerce
+                      </option>
+                      <option value="info tech">
+                        Info Tech Corporation Of Goa Limited
+                      </option>
+                      <option value="information">
+                        Information And Publicity
+                      </option>
+                      <option value="information tech">
+                        Information Technology,Electronics & communications
+                      </option>
+                      <option value="nursing">
+                        Institute Of Nursing Education
+                      </option>
+                      <option value="psychiatry">
+                        Institute Of Psychiatry & Human Behavior
+                      </option>
+                      <option value="institute">
+                        Institute Of Public Assistance(Provedoria)
+                      </option>
+                      <option value="judiciary">Judiciary</option>
+                      <option value="labour">Labour And Employment</option>
+                      <option value="legal">Legal Metrology</option>
+                      <option value="mamlatdar">
+                        Mamlatdar In South District
+                      </option>
+                      <option value="mines">Mines And Geology</option>
+                      <option value="Museum">Museum Department</option>
+                      <option value="new">New And Renewable Energy</option>
+                      <option value="notary">Notary Services</option>
+                      <option value="office">
+                        Office of The Joint Director Of Accounts
+                      </option>
+                      <option value="official">Official Language</option>
+                      <option value="old">Old Age Homes</option>
+                      <option value="ombudsman">Ombudsman</option>
+                      <option value="panchayats">panchayats</option>
+                      <option value="planning">
+                        Planning Statistics & Evaluation
+                      </option>
+                      <option value="police">Police</option>
+                      <option value="ports">Ports</option>
+                      <option value="print">Printing & Stationary</option>
+                      <option value="prisons">Prisons</option>
+                      <option value="prosecution">Prosecution</option>
+                      <option value="private">
+                        Public Private Partnership
+                      </option>
+                      <option value="pwd">Public Works Department</option>
+                      <option value="rajiv">Rajiv Gandhi Kala Mandir</option>
+                      <option value="ravindra">Ravindra Bhavan</option>
+                      <option value="secretariat">Secretariat</option>
+                      <option value="accounts">
+                        State Government Departments Accounts
+                      </option>
+                    </select>
+                  </div>
+                  <div class="inputbox">
+                    <input
+                      type="password"
+                      id="password"
+                      placeholder="Password"
+                      required
+                    />
+                    <!-- <label>Password</label> -->
+                  </div>
+                  <!-- <div class="inputbox">
                                     <select class="dropdown">
                                         <option value="select division">Select Division</option>
                                     </select>
@@ -203,55 +296,73 @@
                                             <option value="sank">Sankhalim</option>
                                     </select>
                                 </div> -->
-                                <button type="submit">Register</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                  <button type="submit">Register</button>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
-        <br>
+      </div>
+      <br />
     </div>
     <footer>
-        <div id="copyright">
-            <p>© 2024
-                <a style="text-decoration: none;color: #fff;padding: 0 10px;" href="https://infotech.goa.gov.in/" target="_blank">Info Tech Corporation of Goa Ltd.</a>
-                - All Rights Reserved.
-            </p>    
-        </div>
+      <div id="copyright">
+        <p>
+          © 2024
+          <a
+            style="text-decoration: none; color: #fff; padding: 0 10px"
+            href="https://infotech.goa.gov.in/"
+            target="_blank"
+            >Info Tech Corporation of Goa Ltd.</a
+          >
+          - All Rights Reserved.
+        </p>
+      </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('registerForm').addEventListener('submit', async function(event) {
-                event.preventDefault();
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("registerForm")
+          .addEventListener("submit", async function (event) {
+            event.preventDefault();
 
-                const formData = {
-                    fullName: document.getElementById('fullName').value,
-                    userName: document.getElementById('userName').value,
-                    email: document.getElementById('email').value,
-                    address: document.getElementById('address').value,
-                    password: document.getElementById('password').value,
-                    designation: document.getElementById('designation').value,
-                    department: document.getElementById('department').value
-                };
+            const formData = {
+              fullName: document.getElementById("fullName").value,
+              userName: document.getElementById("userName").value,
+              email: document.getElementById("email").value,
+              address: document.getElementById("address").value,
+              password: document.getElementById("password").value,
+              designation: document.getElementById("designation").value,
+              department: document.getElementById("department").value,
+            };
 
-                try {
-                    const response = await fetch('http://localhost:3000/api/imanage/register', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formData)
-                    });
-                    console.log(formData);
-                    const result = await response.json();
-                    alert(result.message);
-                } catch (error) {
-                    console.error('Error:', error);
-                    alert('There was a problem with the registration.');
+            try {
+              const response = await fetch(
+                "http://localhost:3000/api/imanage/register",
+                {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(formData),
                 }
-            });
-        });
+              );
+              console.log(formData);
+              const result = await response.json();
+              if (response.ok) {
+                alert("Login successful");
+                // Redirect or handle successful login
+                window.location.href = "/imanage/index.html";
+              } else {
+                alert(result.message || "Login failed");
+              }
+              alert(result.message);
+            } catch (error) {
+              console.error("Error:", error);
+              alert("There was a problem with the registration.");
+            }
+          });
+      });
     </script>
-    </body>
+  </body>
 </html>
