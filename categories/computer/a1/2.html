@@ -223,13 +223,17 @@
                     };
                     
                     try {
-                            const response = await fetch('http://localhost:3000/api/imanage/cart', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(cartData),
-                            });
+                        const response = await fetch(
+              "http://localhost:3000/api/imanage/cart",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(cartData),
+                credentials: "include", // This will include cookies with the request
+              }
+            );
                     
                             const result = await response.json();
                             if (response.ok) {
