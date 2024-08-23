@@ -350,11 +350,11 @@
               console.log(formData);
               const result = await response.json();
               if (response.ok) {
-                alert("Login successful");
+                alert("Registration successful");
                 // Redirect or handle successful login
                 window.location.href = "/imanage/index.html";
               } else {
-                alert(result.message || "Login failed");
+                alert(result.message || "Registration failed");
               }
               alert(result.message);
             } catch (error) {
