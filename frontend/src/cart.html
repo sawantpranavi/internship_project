@@ -56,6 +56,7 @@
                         <th>TOTAL</th>
                         <th><i class="delete-icon" onclick="confirmDelete()">&#128465;</i></th>
                     </tr>
+                    <!-- Cart items will be populated here dynamically -->
                 </table>
                 
                 <br>
@@ -75,7 +76,6 @@
         </div>
 
         <div class="row_cart">
-                    
             <div class="form-group_cart">
                 <label for="dname">Department name</label>
                 <input type="text" id="dname" name="dname" placeholder="Department name" required>
@@ -88,7 +88,6 @@
                 <label for="dept_contact">Department Contact No.</label>
                 <input type="text" id="dept_contact" name="dept_contact" placeholder="Department Contact No." required>
             </div>
-            
         </div>
 
         <div class="row_cart1">
@@ -118,85 +117,55 @@
             <div class="form-group_cart2">
                 <label for="remarks">Remarks</label>
                 <input type="text" id="remark" name="remark" placeholder="Remark">
-            </div>            
-            
+            </div>
         </div>
+
         <button class="confirm-order">CONFIRM ORDER</button><br>
         <button class="CONTINUE">CONTINUE SHOPPING</button><br>
 
         <script>
-            function confirmDelete(){
-                if (confirm("Do you want to delete this item?")) {
-                    // Logic to delete the item goes here
-                    alert("Item deleted!"); // This is just a placeholder
-                } else {
-                    alert("Item not deleted!"); // This is just a placeholder
+            async function loadCartItems() {
+                try {
+                    const response = await fetch('http://localhost:3000/api/imanage/cart', {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        credentials: 'include' // Sends the cookies with the request
+                    });
+
+                    if (response.ok) {
+                        const cartItems = await response.json(); // Assuming the response is JSON
+
+                        populateCartTable(cartItems);
+                    } else {
+                        console.error('Failed to load cart items:', response.statusText);
+                    }
+                } catch (error) {
+                    console.error('Error while fetching cart items:', error);
                 }
             }
 
-            let locationCounter = 1;
+            function populateCartTable(cartItems) {
+                const cartTable = document.querySelector('.cart table');
 
-            function toggleAddLocation() {
-                const locationContainer = document.getElementById('locationContainer');
-                locationContainer.style.display = locationContainer.style.display === 'none' ? 'block' : 'none';
+                cartItems.forEach(item => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+                        <td><input type="checkbox"></td>
+                        <td>${item.name}</td>
+                        <td>${item.vendorName}</td>
+                        <td>${item.unitPrice}</td>
+                        <td>${item.quantity}</td>
+                        <td>${item.unitPrice * item.quantity}</td>
+                        <td><i class="delete-icon" onclick="confirmDelete(${item.id})">&#128465;</i></td>
+                    `;
+
+                    cartTable.appendChild(row);
+                });
             }
 
-            function addLocation() {
-                const locationContainer = document.getElementById('locationContainer');
-
-                // Create a new div for the location entry
-                const newLocationDiv = document.createElement('div');
-                newLocationDiv.className = 'location-entry';
-                newLocationDiv.id = `location_${locationCounter}`;
-
-                // Create the address label and input
-                const addressLabel = document.createElement('label');
-                addressLabel.setAttribute('for', `delivery_address_${locationCounter}`);
-                addressLabel.textContent = 'Delivery Address';
-                
-                const addressInput = document.createElement('input');
-                addressInput.type = 'text';
-                addressInput.id = `delivery_address_${locationCounter}`;
-                addressInput.name = 'delivery_address[]';
-                addressInput.placeholder = 'Full Address';
-                addressInput.required = true;
-
-                // Create the quantity label and input
-                const quantityLabel = document.createElement('label');
-                quantityLabel.setAttribute('for', `quantity_${locationCounter}`);
-                quantityLabel.textContent = 'Quantity';
-                
-                const quantityInput = document.createElement('input');
-                quantityInput.type = 'number';
-                quantityInput.id = `quantity_${locationCounter}`;
-                quantityInput.name = 'quantity[]';
-                quantityInput.min = 1;
-                quantityInput.required = true;
-
-                // Create the remove button
-                const removeButton = document.createElement('button');
-                removeButton.type = 'button';
-                removeButton.textContent = 'X';
-                removeButton.onclick = function() { removeLocation(`location_${locationCounter}`); };
-
-                // Append elements to the new div
-                newLocationDiv.appendChild(addressLabel);
-                newLocationDiv.appendChild(addressInput);
-                newLocationDiv.appendChild(quantityLabel);
-                newLocationDiv.appendChild(quantityInput);
-                newLocationDiv.appendChild(removeButton);
-
-                // Append the new div to the location container
-                locationContainer.appendChild(newLocationDiv);
-
-                // Increment the location counter
-                locationCounter++;
-            }
-
-            function removeLocation(locationId) {
-                const locationDiv = document.getElementById(locationId);
-                locationDiv.remove();
-            }
             function toggleLocations() {
                 var checkbox = document.getElementById("addLocations");
                 var locationTable = document.getElementById("locationTable");
@@ -236,6 +205,11 @@
                 var row = button.parentElement;
                 row.parentElement.removeChild(row);
             }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                loadCartItems();
+            });
         </script>
+    </div>
 </body>
 </html>

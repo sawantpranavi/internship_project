@@ -73,9 +73,43 @@ const findprodid = async (name) => {
         connection.release();
     }
 } 
+
+const getCartData = async (userId) => {
+   const connection = await pool.getConnection();
+    try {
+         const [rows] = await connection.query(
+              'SELECT * FROM cart WHERE userid = ?',
+              [userId]
+         );
+         return rows;
+    } catch (error) {
+         console.error('Database error:', error);
+         throw error;
+    } finally {
+         connection.release();
+    }
+}
+
+const getOrderData = async (userId)=>{
+    const connection = await pool.getConnection();
+    try {
+        const [rows] = await connection.query(
+             'SELECT * FROM order WHERE userid = ?',
+             [userId]
+        );
+        return rows;
+   } catch (error) {
+        console.error('Database error:', error);
+        throw error;
+   } finally {
+        connection.release();
+   }
+}
 module.exports = {
     createUser,
     findUserByEmail,
     createcart,
-    findprodid
+    findprodid,
+    getCartData,
+    getOrderData
 };
