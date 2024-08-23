@@ -7,6 +7,54 @@
     <title>My Orders</title>
     <link rel="stylesheet" href="frontend/src/css/styles.css">
     <style>
+        .orders {
+            padding: 20px;
+            background-color: white;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .orders h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .orders table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .orders th,
+        .orders td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .orders th {
+            background-color: #f2f2f2;
+        }
+
+        .status-complete {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .status-pending {
+            background-color: #ffc107;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -152,19 +200,13 @@
         </div>
         <div class="orders">
             <h2>My Orders</h2>
-            <table>
+            <table id="ordersTable">
                 <tr>
                     <th>#</th>
                     <th>Order Number</th>
                     <th>Date & Time</th>
                     <th>Status</th>
                 </tr>
-                <!-- <tr>
-                    <td>1</td>
-                    <td>20240729000014</td>
-                    <td>29-07-2024 11:43 AM</td>
-                    <td><div class="status-complete">Complete</div></td>
-                </tr> -->
             </table>
         </div>
     </div>
@@ -179,15 +221,39 @@
     </footer>
 </body>
 <script>
-    try {
-        const response = await fetch('http://localhost:3000/api/imanage/orders', {
-            method: 'GET',
-        });
-        const result = await response.json();
-    } catch (error) {
-        console.error('Error:', error);
-        alert('There was a problem with the registration.');
-    }
+    document.addEventListener('DOMContentLoaded', async () => {
+        try {
+            const response = await fetch('http://localhost:3000/api/imanage/orders', {
+                method: 'GET',
+            });
+            const result = await response.json();
+
+            // Populate the table with order data
+            const ordersTable = document.getElementById('ordersTable');
+
+            result.orders.forEach((order, index) => {
+                const row = ordersTable.insertRow(-1); // Add a new row
+
+                // Insert cells and fill them with data
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+                const cell3 = row.insertCell(2);
+                const cell4 = row.insertCell(3);
+
+                cell1.innerHTML = index + 1;
+                cell2.innerHTML = order.orderNumber;
+                cell3.innerHTML = new Date(order.dateTime).toLocaleString();
+                
+                const statusDiv = document.createElement('div');
+                statusDiv.innerHTML = order.status;
+                statusDiv.classList.add(order.status === 'Complete' ? 'status-complete' : 'status-pending');
+                cell4.appendChild(statusDiv);
+            });
+        } catch (error) {
+            console.error('Error:', error);
+            alert('There was a problem loading the orders.');
+        }
+    });
 </script>
 
 </html>

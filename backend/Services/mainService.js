@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const User = require('../Services/dbService');
+const DBservice = require('../Services/dbService');
 
 const secretKey = process.env.JWT_SECRET || 'your_secret_key';
 
@@ -17,10 +17,10 @@ const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Create the user
-        const result = await User.createUser(fullName, userName, email, address, hashedPassword, designation, department);
+        const result = await DBservice.createUser(fullName, userName, email, address, hashedPassword, designation, department);
 
         // Generate JWT token
-        const token = jwt.sign({ id: result.id, email: result.email }, secretKey, { expiresIn: '1h' });
+        const token = jwt.sign({ id: result.id, email: result.email, userName: result.userName }, secretKey, { expiresIn: '1h' });
 
         // Set token in a cookie
         res.cookie('authToken', token);
@@ -42,7 +42,7 @@ const login = async (req, res) => {
         }
 
         // Find the user by email
-        const user = await User.findUserByEmail(email);
+        const user = await DBservice.findUserByEmail(email);
 
         if (!user) {
             return res.status(401).json({ message: 'Invalid email or password' });
@@ -56,7 +56,7 @@ const login = async (req, res) => {
         }
 
         // Generate JWT token
-        const token = jwt.sign({ id: user.id, email: user.email }, secretKey, { expiresIn: '1h' });
+        const token = jwt.sign({ id: user.id, email: user.email, userName: user.userName }, secretKey, { expiresIn: '1h' });
 
         // Set token in a cookie
         res.cookie('authToken', token);
@@ -68,7 +68,6 @@ const login = async (req, res) => {
     }
 };
 
-module.exports = { register, login };
 
 const addtocart = async (req, res) => {
     try {
@@ -77,7 +76,7 @@ const addtocart = async (req, res) => {
         const userId = req.user.id;  // The ID of the authenticated user
         const productid = await User.findprodid(name);
 
-        const result = await User.createcart(userId, productid.id, vendor, quantity);
+        const result = await DBservice.createcart(userId, productid.id, vendor, quantity);
 
         res.status(200).json({ message: 'Product added to cart successfully' });
 
@@ -87,4 +86,44 @@ const addtocart = async (req, res) => {
     }
 };
 
-module.exports = { register, login, addtocart };
+const addOrder = async (req,res)=>{
+    try {
+        
+
+    } catch (error) {
+        
+    }
+}
+
+const getUsername = async (req, res) => {
+    res.user = req.user.userName;
+    res.status(200).json({ message: 'Username fetched successfully', res });
+}
+
+const getCartData = async (req, res) => {
+    try {
+        const userId = req.user.id;  // The ID of the authenticated user
+
+        const result = await DBservice.getCartData(userId);
+        res.cartData = result;
+        res.status(200).json({ message: 'Cart data fetched successfully', result });
+    } catch (error) {
+        console.error('Error during fetching cart data:', error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}
+
+const getOrderData = async (req, res) => {
+    try {
+        const userId = req.user.id;  // The ID of the authenticated user
+
+        const result = await DBservice.getOrderData(userId);
+        res.orderData = result;
+        res.status(200).json({ message: 'Order data fetched successfully', result });
+    } catch (error) {
+        console.error('Error during fetching order data:', error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}
+
+module.exports = { register, login, addtocart, getUsername, getCartData, getOrderData, addOrder };
