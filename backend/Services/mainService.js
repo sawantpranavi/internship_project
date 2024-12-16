@@ -106,6 +106,7 @@ const getCartData = async (req, res) => {
 
         const result = await DBservice.getCartData(userId);
         res.cartData = result;
+        console.log(result);
         res.status(200).json({ message: 'Cart data fetched successfully', result });
     } catch (error) {
         console.error('Error during fetching cart data:', error);
