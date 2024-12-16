@@ -193,7 +193,7 @@
         <div class="product-info">
           <h2 id="name">Acer Veriton M200-H510</h2>
           <br />
-          <p>INR 63,808.50</p>
+          <span> INR</span><p>63,808.50</p>
           <div class="product-options">
             <label for="vendor">Select Vendor</label>
             <select id="vendor">
@@ -286,6 +286,7 @@
           const cartData = {
             vendor: document.getElementById("vendor").value,
             quantity: document.getElementById("quantity").value,
+            unitPrice: document.querySelector(".product-info p").innerText,
             name: document.getElementById("name").innerText,
           };
 
