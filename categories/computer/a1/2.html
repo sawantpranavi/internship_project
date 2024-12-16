@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../comp.html">Computers and Laptops</a> &gt; 
-                <a href="../a1/compa1.html">Desktop Computer Intel core i3 (Category A1)</a> &gt; 
+                <a href="../a1/compa1.html" id="cat">Desktop Computer Intel core i3</a> &gt; 
                 <a href="#">Chromatic Bolt A05</a>
             </nav>
             <section class="product-detail">
@@ -220,6 +220,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText
                     };
                     
                     try {

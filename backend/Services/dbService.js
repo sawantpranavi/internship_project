@@ -25,13 +25,13 @@ const createUser = async (fullName, userName, email, address, password, designat
     }
 };
 
-const createcart = async (userid, productid, vendor, quantity) => {
+const createcart = async (name, userid, productid, vendor, quantity,  price) => {
     const connection = await pool.getConnection();
     console.log("here");
     try {
         const [rows] = await connection.query(
-            'INSERT INTO cart (userid, productid, quantity, vendor) VALUES (?, ?, ?, ?)',
-            [userid, productid, quantity, vendor]
+            'INSERT INTO cart (userid, name, productid, unitPrice, quantity, vendor) VALUES (?, ?, ?, ?, ?, ?)',
+            [userid,name, productid,price,  quantity, vendor]
         );
         return rows;
     } catch (error) {
@@ -58,12 +58,12 @@ const findUserByEmail = async (email) => {
         connection.release();
     }
 };
-const findprodid = async (name) => {
+const findprodid = async (name, cat) => {
     const connection = await pool.getConnection();
     try {
         const [rows] = await connection.query(
-            'SELECT id FROM product WHERE model = ?',
-            [name]
+            'SELECT id, price  FROM product WHERE model = ? AND category = ?',
+            [name, cat]
         );
         return rows[0]; // Return the first row if found, otherwise undefined
     } catch (error) {
