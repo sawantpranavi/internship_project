@@ -47,6 +47,7 @@
         <div class="cart">            
             <p id="mycart">MY CART</p>            
                 <table border="2">
+                    <thead>
                     <tr>
                         <th><input type="checkbox" id="checkAll"></th>
                         <th>NAME</th>
@@ -56,6 +57,10 @@
                         <th>TOTAL</th>
                         <th><i class="delete-icon" onclick="confirmDelete()">&#128465;</i></th>
                     </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
                     <!-- Cart items will be populated here dynamically -->
                 </table>
                 
@@ -149,12 +154,16 @@
 
 function populateCartTable(cartItems) {
     const cartTable = document.querySelector('.cart table');
-    cartTable.innerHTML = '';
+    const tableBody = cartTable.querySelector('tbody');  // Get the <tbody> element
 
-    // if (cartItems.length === 0) {
-    //     cartTable.innerHTML = <tr><td colspan="7">Your cart is empty.</td></tr>;
-    //     return;
-    // }
+    // Clear the table body content
+    tableBody.innerHTML = '';
+
+    // If cartItems is empty, display a message
+    if (cartItems.length === 0) {
+        tableBody.innerHTML = '<tr><td colspan="7">Your cart is empty.</td></tr>';
+        return;
+    }
 
     cartItems.forEach(item => {
         const row = document.createElement('tr');
@@ -169,7 +178,7 @@ function populateCartTable(cartItems) {
             <td><i class="delete-icon" onclick="confirmDelete(${item.id})">&#128465;</i></td>
         `;
 
-        cartTable.appendChild(row);
+        tableBody.appendChild(row);
     });
 }
 
