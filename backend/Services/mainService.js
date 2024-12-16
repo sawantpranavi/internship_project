@@ -71,12 +71,12 @@ const login = async (req, res) => {
 
 const addtocart = async (req, res) => {
     try {
-        const { vendor, quantity, name } = req.body;
+        const { vendor, quantity, name, unitPrice } = req.body;
         console.log(req.body);
         const userId = req.user.id;  // The ID of the authenticated user
         const productid = await DBservice.findprodid(name);
 
-        const result = await DBservice.createcart(userId, productid.id, vendor, quantity);
+        const result = await DBservice.createcart(name, userId, productid.id, vendor, quantity, unitPrice);
 
         res.status(200).json({ message: 'Product added to cart successfully' });
 
