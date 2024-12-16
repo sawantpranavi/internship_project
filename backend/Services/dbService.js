@@ -78,7 +78,7 @@ const getCartData = async (userId) => {
    const connection = await pool.getConnection();
     try {
          const [rows] = await connection.query(
-              'SELECT * FROM cart WHERE userid = ?',
+              'SELECT * FROM cart WHERE userid = ? AND bought=0',
               [userId]
          );
          return rows;
@@ -94,7 +94,7 @@ const getOrderData = async (userId)=>{
     const connection = await pool.getConnection();
     try {
         const [rows] = await connection.query(
-             'SELECT * FROM order WHERE userid = ?',
+             'SELECT * FROM cart WHERE userid = ? AND bought=1',
              [userId]
         );
         return rows;
@@ -105,11 +105,28 @@ const getOrderData = async (userId)=>{
         connection.release();
    }
 }
+const confirmOrder = async (userId) => {
+    const connection = await pool.getConnection();
+    try {
+        const [rows] = await connection.query(
+             'UPDATE cart SET bought=1 WHERE userid = ?',
+             [userId]
+        );
+        return rows;
+   } catch (error) {
+        console.error('Database error:', error);
+        throw error;
+   } finally {
+        connection.release();
+   }
+}
+
 module.exports = {
     createUser,
     findUserByEmail,
     createcart,
     findprodid,
     getCartData,
-    getOrderData
+    getOrderData,
+    confirmOrder
 };

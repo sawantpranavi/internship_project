@@ -127,4 +127,16 @@ const getOrderData = async (req, res) => {
     }
 }
 
-module.exports = { register, login, addtocart, getUsername, getCartData, getOrderData, addOrder };
+const confirmOrder = async (req, res) => {
+    try {
+        const userId = req.user.id;  // The ID of the authenticated user
+
+        const result = await DBservice.confirmOrder(userId);
+        res.status(200).json({ message: 'Order confirmed successfully', result });
+    } catch (error) {
+        console.error('Error during confirming order:', error);
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+}
+
+module.exports = { register, login, addtocart, getUsername, getCartData, getOrderData, addOrder, confirmOrder };

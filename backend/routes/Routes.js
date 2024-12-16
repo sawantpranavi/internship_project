@@ -10,5 +10,6 @@ router.post('/orders',authenticateToken, Service.addOrder);
 router.get('/getUsername',authenticateToken, Service.getUsername);
 router.get('/getCartData',authenticateToken, Service.getCartData);
 router.get('/getOrderData',authenticateToken, Service.getOrderData);
+router.post('/confirmOrder',authenticateToken, Service.confirmOrder);
 
 module.exports = router;
