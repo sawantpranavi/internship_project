@@ -74,7 +74,7 @@ const addtocart = async (req, res) => {
         const { vendor, quantity, name } = req.body;
         console.log(req.body);
         const userId = req.user.id;  // The ID of the authenticated user
-        const productid = await User.findprodid(name);
+        const productid = await DBservice.findprodid(name);
 
         const result = await DBservice.createcart(userId, productid.id, vendor, quantity);
 

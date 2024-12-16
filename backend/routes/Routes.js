@@ -7,8 +7,8 @@ router.post('/register', Service.register);
 router.post('/login', Service.login);
 router.post('/cart',authenticateToken, Service.addtocart);
 router.post('/orders',authenticateToken, Service.addOrder);
-router.post('/getUsername',authenticateToken, Service.getUsername);
-router.post('/getCartData',authenticateToken, Service.getCartData);
-router.post('/getOrderData',authenticateToken, Service.getOrderData);
+router.get('/getUsername',authenticateToken, Service.getUsername);
+router.get('/getCartData',authenticateToken, Service.getCartData);
+router.get('/getOrderData',authenticateToken, Service.getOrderData);
 
 module.exports = router;
