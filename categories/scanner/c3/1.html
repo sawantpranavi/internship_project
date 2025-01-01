@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../scanners.html">Scanners</a> &gt; 
-                <a href="../c3/scannerc3.html">Flatbed Scanner (A4) (Category C3)</a> &gt; 
+                <a href="../c3/scannerc3.html" id="cat">Flatbed Scanner (A4) </a> &gt; 
                 <a href="#">EPSON V39</a>
             </nav>;
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info"> 
                     <h2 id="name">EPSON V39</h2>
                     <br>
-                    <p>INR 6498.02</p>
+                    <p><span>INR</span> 6498.02</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -224,6 +224,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../comp.html">Computers and Laptops</a> &gt; 
-                <a href="../a3/compa3.html">Desktop Computer Intel core i7 (Category A3)</a> &gt; 
+                <a href="../a3/compa3.html" id="cat">Desktop Computer Intel core i7 </a> &gt; 
                 <a href="#">Pro Tower 280 G9</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">HP Pro Tower 280 G9</h2>
                     <br>
-                    <p>INR 96642.00</p>
+                    <p><span>INR</span> 96642.00</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -228,6 +228,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

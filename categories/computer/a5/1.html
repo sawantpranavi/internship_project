@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../comp.html">Computers and Laptops</a> &gt; 
-                <a href="../a5/compa5.html">Desktop Computer AMD RYZEN3 (Category A5)</a> &gt; 
+                <a href="../a5/compa5.html" id="cat">Desktop Computer AMD RYZEN3 </a> &gt; 
                 <a href="#">Veriton M200-P500</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Acer Veriton M200-P500</h2>
                     <br>
-                    <p>INR 59038.35</p>
+                    <p><span>INR</span> 59038.35</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -221,6 +221,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

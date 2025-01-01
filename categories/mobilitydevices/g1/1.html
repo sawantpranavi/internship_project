@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Whishtel IRA J2</h2>
                     <br>
-                    <p>INR 16944.85</p>
+                    <p><span>INR</span> 16944.85</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -220,6 +220,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

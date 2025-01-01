@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../plotters.html">Plotters</a> &gt; 
-                <a href="../d2/plotterd2.html">Plotter 36"</a> &gt; 
+                <a href="../d2/plotterd2.html" id="cat">Plotter 36"</a> &gt; 
                 <a href="#">HP DesignJet T650 36-in Printer</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">HP DesignJet T650 36-in Printer</h2>
                     <br>
-                    <p>INR 183774.74</p>
+                    <p><span>INR</span> 183774.74</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -216,6 +216,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Xerox Make B7025</h2>
                     <br>
-                    <p>INR 163700.22</p>
+                    <p><span>INR</span> 163700.22</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -228,6 +228,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

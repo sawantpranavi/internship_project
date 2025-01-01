@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../printers.html">Printers</a> &gt; 
-                <a href="../b2/printerb2.html">Laser Printers Network(Mono)(Category B2)</a> &gt; 
+                <a href="../b2/printerb2.html" id="cat">Laser Printers Network(Mono)</a> &gt; 
                 <a href="#">LBP 161DN</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Canon LBP 161DN</h2>
                     <br>
-                    <p>INR 19300.38</p>
+                    <p><span>INR</span> 19300.38</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -221,6 +221,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

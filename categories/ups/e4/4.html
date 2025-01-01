@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2>POWER 10K3PH</h2>
                     <br>
-                    <p>INR 372768.00</p>
+                    <p><span>INR</span> 372768.00</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -233,6 +233,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

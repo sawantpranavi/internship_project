@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../comp.html">Computers and Laptops</a> &gt; 
-                <a href="../a4/compa4.html">Desktop Computer Intel core i7(With Graphics Card) (Category A4)</a> &gt; 
+                <a href="../a4/compa4.html" id="cat">Desktop Computer Intel core i7(With Graphics Card) </a> &gt; 
                 <a href="#">Vostro 3020</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Dell Vostro 3020</h2>
                     <br>
-                    <p>INR 109032.00</p>
+                    <p><span>INR</span> 109032.00</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -222,6 +222,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

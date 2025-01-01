@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../scanners.html">Scanners</a> &gt; 
-                <a href="../c1/scannerc1.html">ADF Scanner (Category C1)</a> &gt; 
+                <a href="../c1/scannerc1.html" id="cat">ADF Scanner </a> &gt; 
                 <a href="#">Canon DRC230</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Canon DRC230</h2>
                     <br>
-                    <p>INR 26791.85</p>
+                    <p><span>INR</span> 26791.85</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -212,6 +212,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../printers.html">Printers</a> &gt; 
-                <a href="../b1/printerb1.html">Laser Printers (Category B1)</a> &gt; 
+                <a href="../b1/printerb1.html" id="cat">Laser Printers </a> &gt; 
                 <a href="#">108a/LJ 018A</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">HP 108a/LJ 018A</h2>
                     <br>
-                    <p>INR 13245.97</p>
+                    <p><span>INR</span> 13245.97</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -216,6 +216,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

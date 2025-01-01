@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../plotters.html">Plotters</a> &gt; 
-                <a href="../d1/plotterd1.html">Plotter 42"</a> &gt; 
+                <a href="../d1/plotterd1.html" id="cat">Plotter 42"</a> &gt; 
                 <a href="#">Canon TX-5400(1R)</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Canon TX-5400(1R)</h2>
                     <br>
-                    <p>INR 383308.44</p>
+                    <p><span>INR</span> 383308.44</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -218,6 +218,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

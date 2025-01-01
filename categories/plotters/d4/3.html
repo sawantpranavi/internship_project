@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../plotters.html">Plotters</a> &gt; 
-                <a href="../d4/plotterd4.html">Multifunction Plotter</a> &gt; 
+                <a href="../d4/plotterd4.html" id="cat">Multifunction Plotter</a> &gt; 
                 <a href="#">HP DesignJet T2600 dr 36-in Multifunction Printer</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">HP DesignJet T2600 dr 36-in Multifunction Printer</h2>
                     <br>
-                    <p>INR 643712.63</p>
+                    <p><span>INR</span> 643712.63</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -219,6 +219,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

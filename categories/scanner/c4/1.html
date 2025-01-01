@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../scanners.html">Scanners</a> &gt; 
-                <a href="../c4/scannerc4.html">Large Format Scanner (Category C4)</a> &gt; 
+                <a href="../c4/scannerc4.html" id="cat">Large Format Scanner </a> &gt; 
                 <a href="#">Contex IQ Quattro X 4490</a>
             </nav>;
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info"> 
                     <h2 id="name">Contex IQ Quattro X 4490</h2>
                     <br>
-                    <p>INR 930966.90</p>
+                    <p><span>INR</span> 930966.90</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -218,6 +218,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

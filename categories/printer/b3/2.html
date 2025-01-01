@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../printers.html">Printers</a> &gt; 
-                <a href="../b3/printerb3.html">Laser Printers Network(Color)(Category B3)</a> &gt; 
+                <a href="../b3/printerb3.html" id="cat">Laser Printers Network(Color)</a> &gt; 
                 <a href="#">Make-6510/6515DN</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Xerox Make-6510/6515DN</h2>
                     <br>
-                    <p>INR 73600.12</p>
+                    <p><span>INR</span> 73600.12</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -215,6 +215,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

@@ -155,7 +155,7 @@
             </div>
             <nav>
                 <a href="../printers.html">Printers</a> &gt; 
-                <a href="../b5/printerb5.html">Inkjet Printer Network (Mono)(Category B5)</a> &gt; 
+                <a href="../b5/printerb5.html" id="cat">Inkjet Printer Network (Mono)</a> &gt; 
                 <a href="#">M1170</a>
             </nav>
             <section class="product-detail">
@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Epson M1170</h2>
                     <br>
-                    <p>INR 19993.92</p>
+                    <p><span>INR</span> 19993.92</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -224,6 +224,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {

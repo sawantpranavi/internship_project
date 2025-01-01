@@ -165,7 +165,7 @@
                 <div class="product-info">
                     <h2 id="name">Samsung Tab S6 Lite with Spen (10.4 Inch) P615</h2>
                     <br>
-                    <p>INR 52950.00</p>
+                    <p><span>INR</span> 52950.00</p>
                     <div class="product-options">
                         <label for="vendor">Select Vendor</label>
                         <select id="vendor">
@@ -217,6 +217,7 @@
                         vendor: document.getElementById('vendor').value,
                         quantity: document.getElementById('quantity').value,
                         name: document.getElementById('name').innerText,
+                        cat: document.getElementById("cat").innerText,
                     };
                     
                     try {
