@@ -18,7 +18,8 @@ body {
     padding: 0;
     margin: 0;
     display: flex; /* Use flexbox to align items horizontally */
-    background: black;
+    /* background: black; */
+    background: #22438c;
 }
 
 ul li {

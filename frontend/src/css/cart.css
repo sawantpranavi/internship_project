@@ -1,9 +1,9 @@
-#mycart
+/* #mycart
 {
     text-align: center;
     font-size:40px;
     margin-top: 3%;
-}
+} */
 
 .delete-icon {
     cursor: pointer;
@@ -164,7 +164,8 @@ label {
 
 .confirm-order {
     padding: 15px 6px;
-    background-color: #a77428;
+    /* background-color: #a77428; */
+    background-color: #003366;
     color: white;
     border: none;
     border-radius: 12px;
@@ -179,10 +180,20 @@ button:hover {
 
 .CONTINUE {
     padding: 15px 6px;
-    background-color: #a77428;
+    /* background-color: #a77428; */
+    background-color: #003366;
     color: white;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     font-size:large;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
 }
