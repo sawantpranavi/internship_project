@@ -96,8 +96,8 @@ const addOrder = async (req,res)=>{
 }
 
 const getUsername = async (req, res) => {
-    res.user = req.user.userName;
-    res.status(200).json({ message: 'Username fetched successfully', res });
+    req.user.userName = result;
+    res.status(200).json({ message: 'Username fetched successfully', username: result });
 }
 
 const getCartData = async (req, res) => {

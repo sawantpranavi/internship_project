@@ -1,184 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iManage | Home</title>
-    <link rel="stylesheet" href="./frontend/src/css/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <style>
-        #dropdown {
-            position: relative;
-            display: inline-block;
-        }
 
-        #dropbtn {
-            background-color: #ffffff;
-            color: #333333;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #cccccc;
-            cursor: pointer;
-            border-radius: 5px;
-        }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iManage | Home</title>
+  <link rel="stylesheet" href="./frontend/src/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    #dropdown {
+      position: relative;
+      display: inline-block;
+    }
 
-        #dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #ffffff;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 5px;
-            border: 1px solid #cccccc;
-        }
+    #dropbtn {
+      background-color: #ffffff;
+      color: #333333;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #cccccc;
+      cursor: pointer;
+      border-radius: 5px;
+    }
 
-        #dropdown-content a {
-            color: #333333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            border-bottom: 1px solid #eeeeee;
-        }
+    #dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      border: 1px solid #cccccc;
+    }
 
-        #dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
+    #dropdown-content a {
+      color: #333333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eeeeee;
+    }
 
-        #dropdown:hover #dropdown-content {
-            display: block;
-        }
+    #dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
 
-        #dropdown:hover #dropbtn {
-            background-color: #f1f1f1;
-        }
-    </style> 
-  </head>
+    #dropdown:hover #dropdown-content {
+      display: block;
+    }
 
-  <body>
-    <div class="container">
-      <h1>Welcome to iManage</h1>
-      <div id="dropdown">
-            <button id="dropbtn">userName</button>
-            <div id="dropdown-content">
-                <a href="./frontend/src/orders.html">My Orders</a>
-                <!-- <a href="#">My Profile</a> -->
-                <a href="#">Logout</a>
-            </div>
-        </div>
+    #dropdown:hover #dropbtn {
+      background-color: #f1f1f1;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav2 {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav">
+      <h1>iManage</h1>
+
+      <div class="nav2">
+      
+      </div>
+      
+
+      <div class="nav2">
+
         <a href="index.html" class="home-icon">
           <i class="fas fa-home"></i>
-      </a>
-      <a href="./frontend/src/cart.html" class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-      <div class="header">
-        <div id="search">
-          <button id="login-button">Login</button>
-          <div class="form-box" id="login-form">
-            <div class="form-value">
-              <!-- Login and Register buttons  -->
-              <div class="popup-buttons">
-                <button id="login-option">Login</button>
-                <button id="register-option">Register</button>
-              </div>  
-                <!--Register Form  
-                        <div id="register-content" class="form-content" style="display: none;">
-                            <form>
-                                <h2>Register</h2>
-                                <div class="inputbox">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                    <input type="text" required>
-                                    <label>Full Name</label>
-                                </div>
-                                <div class="inputbox">
-                                    <ion-icon name="person-outline"></ion-icon>
-                                    <input type="text" required>
-                                    <label>Username</label>
-                                </div>
-                                <div class="inputbox">
-                                    <ion-icon name="mail-outline"></ion-icon>
-                                    <input type="email" required>
-                                    <label>Email</label>
-                                </div>
-                                <div class="inputbox">
-                                    <ion-icon name="call-outline"></ion-icon>
-                                    <input type="tel" required>
-                                    <label>Mobile Number</label>
-                                </div>
-                                <div class="inputbox">
-                                    <ion-icon name="desig-outline"></ion-icon>
-                                    <input type="text" placeholder="Designation" required >
-                                    
-                                </div>
-                                <button type="submit">Register</button>
-                            </form>
-                        </div> -->
+        </a>
+        <a href="./frontend/src/cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <div id="dropdown">
+          <button id="dropbtn">userName</button>
+          <div id="dropdown-content">
+            <a href="./frontend/src/orders.html">My Orders</a>
+            <!-- <a href="#">My Profile</a> -->
+            <a href="#">Logout</a>
+          </div>
+        </div>
+
+        <div class="header">
+          <div id="search">
+            <button id="login-button">Login</button>
+            <div class="form-box" id="login-form">
+              <div class="form-value">
+                <!-- Login and Register buttons  -->
+                <div class="popup-buttons">
+                  <button id="login-option">Login</button>
+                  <button id="register-option">Register</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
       </div>
-      <br />
-      <div>
-        <ul class="menu">
-          <li>
-            <a href="#">Categories</a>
-            <ul class="dropdown">
-              <li>
-                <a href="categories/computer/comp.html">Computers and Laptops - A</a>
-              </li>
-              <li>
-                <a href="categories/printer/printers.html">Printers - B</a>
-              </li>
-              <li>
-                <a href="categories/scanner/scanners.html">Scanners - C</a>
-              </li>
-              <li>
-                <a href="categories/plotters/plotters.html">Plotters - D</a>
-              </li>
-              <li>
-                <a href="categories/ups/ups.html">UPS Online Offline - E</a>
-              </li>
-              <li>
-                <a href="categories/xerox/xerox.html"
-                  >Photocopiers, Xerox Machines - F</a
-                >
-              </li>
-              <li>
-                <a href="categories/mobilitydevices/mobility.html"
-                  >Mobility Devices - G</a
-                >
-              </li>
-              <li>
-                <a href="categories/videodevices/videounits.html"
-                  >Video Conferencing Devices - H</a
-                >
-              </li>
-              <li>
-                <a href="categories/displayunits/displayunits.html"
-                  >Display Units - I</a
-                >
-              </li>
-              <li>
-                <a href="categories/miscellaneous/miscellaneous.html"
-                  >Miscellaneous - J</a
-                >
-              </li>
-              <li>
-                <a href="categories/biometric/biometrics.html"
-                  >Biometrics Attendance Device - K</a
-                >
-              </li>
-              <li>
-                <a href="categories/antivirus/antivirus.html">Anti Virus - L</a>
-              </li>
-            </ul>
-          </li>
-          <li><a href="./exploreshop/all.html">Explore Shop</a></li>
-          <!-- <li>
+    </nav>
+
+    <br />
+    <div>
+      <ul class="menu">
+        <li>
+          <a href="#">Categories</a>
+          <ul class="dropdown">
+            <li>
+              <a href="categories/computer/comp.html">Computers and Laptops - A</a>
+            </li>
+            <li>
+              <a href="categories/printer/printers.html">Printers - B</a>
+            </li>
+            <li>
+              <a href="categories/scanner/scanners.html">Scanners - C</a>
+            </li>
+            <li>
+              <a href="categories/plotters/plotters.html">Plotters - D</a>
+            </li>
+            <li>
+              <a href="categories/ups/ups.html">UPS Online Offline - E</a>
+            </li>
+            <li>
+              <a href="categories/xerox/xerox.html">Photocopiers, Xerox Machines - F</a>
+            </li>
+            <li>
+              <a href="categories/mobilitydevices/mobility.html">Mobility Devices - G</a>
+            </li>
+            <li>
+              <a href="categories/videodevices/videounits.html">Video Conferencing Devices - H</a>
+            </li>
+            <li>
+              <a href="categories/displayunits/displayunits.html">Display Units - I</a>
+            </li>
+            <li>
+              <a href="categories/miscellaneous/miscellaneous.html">Miscellaneous - J</a>
+            </li>
+            <li>
+              <a href="categories/biometric/biometrics.html">Biometrics Attendance Device - K</a>
+            </li>
+            <li>
+              <a href="categories/antivirus/antivirus.html">Anti Virus - L</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="./exploreshop/all.html">Explore Shop</a></li>
+        <!-- <li>
             <a href="#">Services</a>
             <ul class="dropdown">
               <li><a href="#">New Procurement</a></li>
@@ -186,109 +167,106 @@
               <li><a href="#">View Tickets</a></li>
             </ul>
           </li> -->
-          <li><a href="contactus/contact.html">Contact Us</a></li>
-        </ul>
+        <li><a href="contactus/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <section id="maincontent">
+      <img src="ads.jpg" />
+      <div class="text">
+        <b>ICT PROCUREMENT MAINTAINANCE AND REPAIR</b>
       </div>
-      <section id="maincontent">
-        <img src="ads.jpg"/>
-        <div class="text">
-          <b>ICT PROCUREMENT MAINTAINANCE AND REPAIR</b>
-        </div>
-        <div class="text1">
-          Online digital Platform for Procurement,Supply & Commissioning of ICT
-          Equipments to Government
-          Department / Organization / Institution , Corporations / Autonomus Bodies in
-          the State of Goa
-        </div>
-      </section>
+      <div class="text1">
+        Online digital Platform for Procurement,Supply & Commissioning of ICT
+        Equipments to Government
+        Department / Organization / Institution , Corporations / Autonomus Bodies in
+        the State of Goa
+      </div>
+    </section>
+    <br />
+    <section id="mainbanner">
+      <div class="div1">
+        <a href="#">
+          <h2>Ordering Items</h2>
+        </a>
+      </div>
       <br />
-      <section id="mainbanner">
-        <div class="div1">
-          <a href="#">
-            <h2>Ordering Items</h2>
-          </a>
-        </div>
-        <br />
-        <!-- <div class="div1">
+      <!-- <div class="div1">
           <a href="#">
             <h2>Items AMC</h2>
           </a>
         </div>
         <br /> -->
-      </section>
-      <br />
+    </section>
+    <br />
+  </div>
+  <footer>
+    <div id="copyright">
+      <p>
+        © 2024
+        <a style="text-decoration: none; color: #fff; padding: 0 10px" href="https://infotech.goa.gov.in/"
+          target="_blank">Info Tech Corporation of Goa Ltd.</a>
+        - All Rights Reserved.
+      </p>
     </div>
-    <footer>
-      <div id="copyright">
-        <p>
-          © 2024
-          <a
-            style="text-decoration: none; color: #fff; padding: 0 10px"
-            href="https://infotech.goa.gov.in/"
-            target="_blank"
-            >Info Tech Corporation of Goa Ltd.</a
-          >
-          - All Rights Reserved.
-        </p>
-      </div>
-    </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", async () => {
-        // Set the default username to "Guest"
-        document.getElementById("dropbtn").innerText = "Guest";
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      // Set the default username to "Guest"
+      document.getElementById("dropbtn").innerText = "Guest";
 
-        // Fetch the username
-        // try {
-        //   const response = await fetch(
-        //     "http://localhost:3000/api/imanage/getUsername",
-        //     {
-        //       method: "GET",
-        //       credentials: "include",
-        //       headers: {
-        //         "Content-Type": "application/json",
-        //       },
-        //     }
-        //   );
-
-        //   const result = await response.json();
-        //   if (response.ok && result.username) {
-        //     document.getElementById("dropbtn").innerText = result.username;
-        //   } else {
-        //     document.getElementById("dropbtn").innerText = "Guest";
-        //   }
-        // } catch (error) {
-        //   console.error("Error:", error);
-        //   alert("An error occurred. Please try again.");
-        // }
-
-        // Popup handling logic
-        const loginButton = document.getElementById("login-button");
-        const loginForm = document.getElementById("login-form");
-        const loginOption = document.getElementById("login-option");
-        const registerOption = document.getElementById("register-option");
-
-        // Show login form popup when login button is clicked
-        loginButton.addEventListener("click", () => {
-          loginForm.style.display = "flex";
-        });
-
-        // Close the popup when clicking outside the form content
-        loginForm.addEventListener("click", (event) => {
-          if (event.target === loginForm) {
-            loginForm.style.display = "none";
+      // Fetch the username
+      try {
+        const response = await fetch(
+          "http://localhost:3000/api/imanage/getUsername",
+          {
+            method: "GET",
+            credentials: "include",
+            headers: {
+              "Content-Type": "application/json",
+            },
           }
-        });
+        );
 
-        // Redirect to login page
-        loginOption.addEventListener("click", () => {
-          location.href = "frontend/src/login.html";
-        });
+        const result = await response.json();
+        if (response.ok && result.username) {
+          document.getElementById("dropbtn").innerText = result.username;
+        } else {
+          document.getElementById("dropbtn").innerText = "Guest";
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again.");
+      }
 
-        // Redirect to register page
-        registerOption.addEventListener("click", () => {
-          location.href = "frontend/src/register.html";
-        });
+      // Popup handling logic
+      const loginButton = document.getElementById("login-button");
+      const loginForm = document.getElementById("login-form");
+      const loginOption = document.getElementById("login-option");
+      const registerOption = document.getElementById("register-option");
+
+      // Show login form popup when login button is clicked
+      loginButton.addEventListener("click", () => {
+        loginForm.style.display = "flex";
       });
-    </script>
-  </body>
+
+      // Close the popup when clicking outside the form content
+      loginForm.addEventListener("click", (event) => {
+        if (event.target === loginForm) {
+          loginForm.style.display = "none";
+        }
+      });
+
+      // Redirect to login page
+      loginOption.addEventListener("click", () => {
+        location.href = "frontend/src/login.html";
+      });
+
+      // Redirect to register page
+      registerOption.addEventListener("click", () => {
+        location.href = "frontend/src/register.html";
+      });
+    });
+  </script>
+</body>
+
 </html>
