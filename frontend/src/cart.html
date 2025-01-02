@@ -75,6 +75,7 @@
             </ul>
         </div> -->
         <div class="container">
+
             <table border="2">
                 <thead>
                     <tr>
@@ -107,53 +108,8 @@
                         <button type="button" class="add-btn" onclick="addRow()">+</button>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
-
-        <div class="row_cart">
-            <div class="form-group_cart">
-                <label for="dname">Department name</label>
-                <input type="text" id="dname" name="dname" placeholder="Department name" required>
-            </div>
-            <div class="form-group_cart">
-                <label for="daddress">Department address</label>
-                <input type="text" id="daddress" name="daddress" placeholder="Department address" required>
-            </div>
-            <div class="form-group_cart">
-                <label for="dept_contact">Department Contact No.</label>
-                <input type="text" id="dept_contact" name="dept_contact" placeholder="Department Contact No." required>
-            </div>
-        </div>
-
-        <div class="row_cart1">
-            <div class="form-group_cart1">
-                <label for="hod_name">HOD Name</label>
-                <input type="text" id="hod_name" name="hod_name" placeholder="HOD Name" required>
-            </div>
-            <div class="form-group_cart1">
-                <label for="district">District</label>
-                <input type="text" id="district" name="district" placeholder="District" required>
-            </div>
-            <div class="form-group_cart1">
-                <label for="taluka">Taluka</label>
-                <input type="text" id="taluka" name="taluka" placeholder="Taluka" required>
-            </div>
-        </div>
-
-        <div class="row_cart2">
-            <div class="form-group_cart2">
-                <label for="constituency">Constituency</label>
-                <input type="text" id="constituency" name="constituency" placeholder="constituency" required>
-            </div>
-            <div class="form-group_cart2">
-                <label for="user_address">User Address</label>
-                <input type="text" id="user_address" name="user_address" placeholder="User Address" required>
-            </div>
-            <div class="form-group_cart2">
-                <label for="remarks">Remarks</label>
-                <input type="text" id="remark" name="remark" placeholder="Remark">
-            </div>
-        </div> -->
 
         <button class="confirm-order" onclick=>CONFIRM ORDER</button>
         <button class="CONTINUE">CONTINUE SHOPPING</button><br>
@@ -206,7 +162,7 @@
             }
 
             function populateCartTable(cartItems) {
-                const cartTable = document.querySelector('.cart table');
+                const cartTable = document.querySelector('.container table');
                 const tableBody = cartTable.querySelector('tbody');  // Get the <tbody> element
 
                 // Clear the table body content
