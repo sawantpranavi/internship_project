@@ -18,6 +18,15 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -95,25 +104,9 @@
             </table>
 
             <br>
-            <!-- <div class="location-section">
-                <input type="checkbox" id="addLocations" onclick="toggleLocations()">
-                <label for="addLocations">Add multiple locations</label>
-
-                <div id="locationTable">
-                    <div class="location-row">
-                        <label for="delivery_address_1">Delivery Address</label>
-                        <input type="text" id="delivery_address_1" name="delivery_address[]" placeholder="Full Address"
-                            required>
-                        <input type="number" id="quantity_1" name="quantity[]" placeholder="Quantity" required>
-                        <button type="button" class="add-btn" onclick="addRow()">+</button>
-                    </div>
-                </div>
-            </div>-->
+            <button class="confirm-order" onclick=>CONFIRM ORDER</button>
+            <button class="CONTINUE">CONTINUE SHOPPING</button><br>
         </div>
-
-        <button class="confirm-order" onclick=>CONFIRM ORDER</button>
-        <button class="CONTINUE">CONTINUE SHOPPING</button><br>
-
 
         <script>
             document.querySelector('.confirm-order').addEventListener('click', async function confirmOrder() {

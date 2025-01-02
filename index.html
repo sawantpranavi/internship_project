@@ -215,28 +215,28 @@
       document.getElementById("dropbtn").innerText = "Guest";
 
       // Fetch the username
-      try {
-        const response = await fetch(
-          "http://localhost:3000/api/imanage/getUsername",
-          {
-            method: "GET",
-            credentials: "include",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+      // try {
+      //   const response = await fetch(
+      //     "http://localhost:3000/api/imanage/getUsername",
+      //     {
+      //       method: "GET",
+      //       credentials: "include",
+      //       headers: {
+      //         "Content-Type": "application/json",
+      //       },
+      //     }
+      //   );
 
-        const result = await response.json();
-        if (response.ok && result.username) {
-          document.getElementById("dropbtn").innerText = result.username;
-        } else {
-          document.getElementById("dropbtn").innerText = "Guest";
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred. Please try again.");
-      }
+      //   const result = await response.json();
+      //   if (response.ok && result.username) {
+      //     document.getElementById("dropbtn").innerText = result.username;
+      //   } else {
+      //     document.getElementById("dropbtn").innerText = "Guest";
+      //   }
+      // } catch (error) {
+      //   console.error("Error:", error);
+      //   alert("An error occurred. Please try again.");
+      // }
 
       // Popup handling logic
       const loginButton = document.getElementById("login-button");
