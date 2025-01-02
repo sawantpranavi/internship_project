@@ -109,7 +109,7 @@ const confirmOrder = async (userId) => {
     const connection = await pool.getConnection();
     try {
         const [rows] = await connection.query(
-             'UPDATE cart SET bought=1, orderDate=CURDATE() WHERE userid = ?',
+             'UPDATE cart SET bought=1, orderDate=CURDATE() WHERE userid = ? AND bought=0',
              [userId]
         );
         return rows;
